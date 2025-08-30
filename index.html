@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Carla y Jose</title>
+    <link rel="stylesheet" type="text/css" href="theme.css"> 
+    <link rel="stylesheet" type="text/css" href="./icons/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/78b55d8985.js" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .countdown-container {
+          display: flex;
+          justify-content: center;
+          gap: 50px;
+          padding: 40px;
+          font-family: 'Caveat', cursive;
+          font-size: 8em; /* ¡Doble de grande! */
+          color: #6b4c3b;
+          background-color: #fff8f0;
+          border-radius: 20px;
+          box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+          margin-top: 50px;
+          flex-wrap: wrap;
+          text-align: center;
+          transition: all 0.3s ease;
+        }
+
+        .countdown-container span {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 120px;
+        }
+
+        .countdown-container span::before {
+          content: attr(data-label);
+          font-size: 0.85em; /* más pequeño para compensar el aumento */
+          color: #a67c52;
+          margin-bottom: 12px;
+          font-family: 'Quicksand', sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+</style>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="heading">
+        Carla & Jose
+        <span class="heading-subtext"> nos vamos a casar!</span>
+      </h1>
+    </header>
+    <div id="countdown" class="countdown-container"></div>
+    <a data-scroll class="fixed-button" href="#rsvp" id="rsvpButton">RSVP</a> 
+    <section class="section">
+      <h2 class="sub-heading">Nuestra Boda</h2>
+      <p>Nos casamos y tú eres parte de esta historia, por ello queremos invitarte a esta celebración tan especial para nosotros.
+      </p>
+    </section>
+    <section class="section">
+      <h2 class="sub-heading">Fecha</h2>
+      <div class="details">
+        <i class="fa-solid fa-calendar-days fa-2xl"></i>
+        <p>Noviembre, 14 2026</p>
+        <a title="Add to Calendar" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Carla+y+Jose&dates=20261114T160000Z/20261114T190000Z&details=Nos+casamos+en+Segovia+%F0%9F%92%8D&location=Rancho+de+la+Aldehuela,+Torrecaballeros,+Segovia" 
+        target="_blank" rel="noopener" target="_blank" rel="nofollow">Añadir a Google Calendar</a>
+      </div>
+      <div class="details">
+        <h2 class="sub-heading">Lugar del enlace</h2>
+        <i class="fa-solid fa-map-location fa-2xl"></i>
+        <p><a rel="noopener" href="https://fincaelrancho.es/">Rancho de la Aldehuela</a>, Torrecaballeros, Segovia</p>
+        <p><b>Dirección:</b>  Pl. del Marqués de Lozoya, 3, 40160</p>
+        <p><b>Telefono:</b>921 40 10 60</p>
+        <img class="resort-image" src="./img/rancho.png" alt="Resort" />
+      </div>
+      <div class="details">
+        <h2 class="sub-heading">Alojamiento</h2>
+        <i class="fa-solid fa-bed fa-2xl"></i>
+        <p><a rel="noopener" href="https://hotelelrancho.booking-hospedium.com/rooms?start_date=2025-08-30&end_date=2025-08-31">Hotel 4* El Rancho</a></p>
+        <p>Con 50 habitaciones, zona de aguas , piano bar y piscina de verano. Un espacio para perderse, para descansar y olvidarse del mundo. Un desayuno buffet que por si sólo merece ya la visita.</p> 
+        <br>
+        <p><a rel="noopener" href="https://laposadadelrancho.booking-hospedium.com/rooms?hotel=&start_date=2025-08-30&end_date=2025-08-31">Hotel La Posada</a></p>
+        <p>Con 29 habitaciones, muy confortable y tranquilo, ideal para alojamientos para hacer turismo por esta zona castellana, que tanto tiene que ofrecer.</p>
+      </div>
+      <div class="details">
+        <h2 class="sub-heading">Casas Rurales</h2>
+        <i class="fa-solid fa-house-user fa-2xl"></i>
+        <p><a rel="noopener" href="#">Casa 1</a></p>
+        <p>ake dessert mother guitar acoustic bass cheers, uncle joe seat covers guitar acoustic bass macarena seat covers cake dessert embarrassing.</p> 
+        <br>
+        <p><a rel="noopener" href="#">Casa 2</a></p>
+        <p>ake dessert mother guitar acoustic bass cheers, uncle joe seat covers guitar acoustic bass macarena seat covers cake dessert embarrassing.</p>
+      </div>
+      <div class="details">
+        <i class="fas fa-asterisk"></i>
+        <h3 class="details-heading">Other Notes</h3>
+        <p>Cake dessert mother guitar acoustic bass cheers, uncle joe seat covers guitar acoustic bass macarena seat covers cake dessert embarrassing.</p>
+        <p>Also, your presence is the only present we desire. No gift required.</p>
+      </div>
+      <div class="details">
+        <i class="fas fa-reply"></i>
+        <h3 class="details-heading" id="rsvp">RSVP</h3>
+        <p>[Embed your RSVP form here]</p>
+        <!-- Include Embedded link of Google Form here in place of # -->
+        <!-- <iframe title="RSVP" src="" style="width:100%;" height="960" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+      </div>
+    </section>
+    <script src="./js/smooth-scroll.polyfills.min.js"></script>
+    <script defer>
+      var scroll = new SmoothScroll('a[href*="#"]');
+      var rsvpButton = document.getElementById('rsvpButton')
+      rsvpButton.addEventListener('click',hideButton,false);
+
+      function hideButton() {
+        rsvpButton.style.display = 'none';
+      }   
+    </script>
+  </body>
+  <script>
+  function updateCountdown() {
+    // Fecha objetivo: 14 de noviembre de 2026 a las 17:00 hora local en España
+    const targetDate = new Date("2026-11-14T17:00:00");
+
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      document.getElementById('countdown').innerHTML = "¡Ya llegó el gran día! 💍";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('countdown').innerHTML =
+      `<span data-label="Días">${days}</span>
+       <span data-label="Horas">${hours}</span>
+       <span data-label="Minutos">${minutes}</span>
+       <span data-label="Segundos">${seconds}</span>`;
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+
+
+</html>
