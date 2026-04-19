@@ -94,36 +94,18 @@
                 <div class="rsvp-card rsvp-card-confirmation">
                     <div class="rsvp-kicker">Guest List</div>
                     <h2 class="rsvp-title">Confirma tu asistencia</h2>
-                    <p class="rsvp-copy">El formulario completo ya está listo. Puedes confirmar asistencia, indicar acompañantes, contarnos alergias y dejar detalles útiles para organizarlo todo mejor.</p>
-                    <div class="rsvp-status-row">
-                        <span class="rsvp-status-pill">Formulario RSVP activo</span>
-                        <span class="rsvp-date-chip" id="rsvp-date-chip">6 febrero 2027</span>
-                    </div>
+                    <p class="rsvp-copy">Rellena el formulario para confirmar si vienes, indicar acompañantes y dejarnos los datos importantes para organizar la boda.</p>
                     <div class="rsvp-actions">
                         <a class="rsvp-action-button rsvp-action-primary" href="rsvp.html">
                             <i class="fas fa-list-check"></i>
-                            <span>Abrir formulario de asistencia</span>
-                        </a>
-                        <a class="rsvp-action-button" href="rsvp.html#calendar-tools">
-                            <i class="fas fa-star"></i>
-                            <span>Ver opciones y extras</span>
+                            <span>Rellenar formulario</span>
                         </a>
                     </div>
-                    <p class="rsvp-note">La confirmación manual ya queda como respaldo. Desde aquí en adelante lo normal es hacerlo desde el formulario dedicado.</p>
                 </div>
                 <div class="rsvp-card rsvp-card-calendar">
                     <div class="rsvp-kicker">Save The Date</div>
                     <h2 class="rsvp-title">Guárdalo en tu calendario</h2>
                     <p class="rsvp-copy">Añade de una vez la preboda del viernes y la boda del sábado para no perderte nada del festival.</p>
-                    <div class="calendar-highlight">
-                        <div class="calendar-highlight-icon">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
-                        <div>
-                            <p id="calendar-date-display" class="calendar-highlight-date">5 y 6 de febrero de 2027</p>
-                            <p class="calendar-highlight-meta">Viernes: preboda · Sábado: boda y celebración · Rancho de la Aldehuela</p>
-                        </div>
-                    </div>
                     <div class="rsvp-actions">
                         <button id="calendar-download" type="button" class="rsvp-action-button rsvp-action-primary calendar-download-button">
                             <i class="fas fa-calendar-plus"></i>
@@ -405,7 +387,6 @@
                 footerMessage.textContent = message;
             }
 
-            const calendarDateDisplay = document.getElementById('calendar-date-display');
             const rsvpDateChip = document.getElementById('rsvp-date-chip');
             const calendarDownload = document.getElementById('calendar-download');
             const prebodaStart = new Date('2027-02-05T19:00:00+01:00');
@@ -417,10 +398,6 @@
                 month: 'long',
                 year: 'numeric'
             }).format(bodaStart);
-
-            if (calendarDateDisplay) {
-                calendarDateDisplay.textContent = '5 y 6 de febrero de 2027';
-            }
 
             if (rsvpDateChip) {
                 rsvpDateChip.textContent = formattedShortDate;

@@ -177,15 +177,6 @@
                             <div class="rsvp-kicker">Save The Date</div>
                             <h2 class="rsvp-title">Añádelo a tu calendario</h2>
                             <p class="rsvp-copy">Guarda ya la preboda del viernes y la boda del sábado en un solo gesto.</p>
-                            <div class="calendar-highlight">
-                                <div class="calendar-highlight-icon">
-                                    <i class="fas fa-calendar-check"></i>
-                                </div>
-                                <div>
-                                    <p id="calendar-date-display" class="calendar-highlight-date">5 y 6 de febrero de 2027</p>
-                                    <p class="calendar-highlight-meta">Viernes: preboda · Sábado: boda y celebración · Rancho de la Aldehuela</p>
-                                </div>
-                            </div>
                             <div class="rsvp-actions">
                                 <button id="calendar-download" type="button" class="rsvp-action-button rsvp-action-primary calendar-download-button">
                                     <i class="fas fa-calendar-plus"></i>
@@ -267,12 +258,7 @@
             const prebodaEnd = new Date('2027-02-06T01:00:00+01:00');
             const bodaStart = new Date('2027-02-06T17:00:00+01:00');
             const bodaEnd = new Date('2027-02-07T01:30:00+01:00');
-            const calendarDateDisplay = document.getElementById('calendar-date-display');
             const calendarDownload = document.getElementById('calendar-download');
-
-            if (calendarDateDisplay) {
-                calendarDateDisplay.textContent = '5 y 6 de febrero de 2027';
-            }
 
             const formatIcsDate = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
             if (calendarDownload) {

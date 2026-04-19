@@ -769,6 +769,12 @@ h2 {
     gap: 1.5rem;
 }
 
+.rsvp-shell > .rsvp-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .rsvp-card {
     position: relative;
     overflow: hidden;
@@ -859,6 +865,12 @@ h2 {
     flex-wrap: wrap;
     gap: 0.85rem;
     margin: 1.4rem 0 1rem;
+}
+
+.rsvp-card-confirmation .rsvp-actions,
+.rsvp-card-calendar .rsvp-actions {
+    margin-top: auto;
+    padding-top: 1.25rem;
 }
 
 .rsvp-action-button {
