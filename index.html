@@ -87,6 +87,54 @@
         </div>
     </section>
 
+    <!-- Asistencia y Calendario -->
+    <section id="asistencia" class="rsvp-section py-5">
+        <div class="container">
+            <div class="rsvp-shell">
+                <div class="rsvp-card rsvp-card-confirmation">
+                    <div class="rsvp-kicker">Guest List</div>
+                    <h2 class="rsvp-title">Confirma tu asistencia</h2>
+                    <p class="rsvp-copy">El formulario completo ya está listo. Puedes confirmar asistencia, indicar acompañantes, contarnos alergias y dejar detalles útiles para organizarlo todo mejor.</p>
+                    <div class="rsvp-status-row">
+                        <span class="rsvp-status-pill">Formulario RSVP activo</span>
+                        <span class="rsvp-date-chip" id="rsvp-date-chip">6 febrero 2027</span>
+                    </div>
+                    <div class="rsvp-actions">
+                        <a class="rsvp-action-button rsvp-action-primary" href="rsvp.html">
+                            <i class="fas fa-list-check"></i>
+                            <span>Abrir formulario de asistencia</span>
+                        </a>
+                        <a class="rsvp-action-button" href="rsvp.html#calendar-tools">
+                            <i class="fas fa-star"></i>
+                            <span>Ver opciones y extras</span>
+                        </a>
+                    </div>
+                    <p class="rsvp-note">La confirmación manual ya queda como respaldo. Desde aquí en adelante lo normal es hacerlo desde el formulario dedicado.</p>
+                </div>
+                <div class="rsvp-card rsvp-card-calendar">
+                    <div class="rsvp-kicker">Save The Date</div>
+                    <h2 class="rsvp-title">Guárdalo en tu calendario</h2>
+                    <p class="rsvp-copy">Añade de una vez la preboda del viernes y la boda del sábado para no perderte nada del festival.</p>
+                    <div class="calendar-highlight">
+                        <div class="calendar-highlight-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div>
+                            <p id="calendar-date-display" class="calendar-highlight-date">5 y 6 de febrero de 2027</p>
+                            <p class="calendar-highlight-meta">Viernes: preboda · Sábado: boda y celebración · Rancho de la Aldehuela</p>
+                        </div>
+                    </div>
+                    <div class="rsvp-actions">
+                        <button id="calendar-download" type="button" class="rsvp-action-button rsvp-action-primary calendar-download-button">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Añadir a tu calendario</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Detalles de la Boda -->
     <section id="detalles" class="py-5">
         <div class="container">
@@ -155,60 +203,29 @@
 
             <!-- Ubicación -->
             <div class="location-section mt-5">
-                <h3 class="text-center mb-4"><i class="fas fa-map-marker-alt me-2"></i>Ubicación</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="location-card">
-                            <h5>Rancho de la Aldeguela</h5>
-                            <p>Torrecaballeros, Segovia, España</p>
-                            <p>Un escenario natural perfecto para nuestro festival indie.</p>
+                <h3 class="text-center mb-4"><span class="location-title-icon"><i class="fas fa-location-dot"></i></span>Ubicación</h3>
+                <div class="location-showcase">
+                    <div class="location-card location-card-main">
+                        <div class="location-badge">Festival Spot</div>
+                        <h5>Rancho de la Aldehuela</h5>
+                        <p class="location-place">Torrecaballeros, Segovia, España</p>
+                        <p>Un entorno natural, abierto y con carácter para celebrar la preboda y la gran noche con estética de festival indie.</p>
+                        <div class="location-actions">
+                            <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=Rancho+de+la+Aldehuela+Torrecaballeros+Segovia" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-route"></i>
+                                <span>Abrir en Google Maps</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.123456789012!2d-4.123456!3d40.987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDU5JzE1LjUiTiA0wrAwNycxOC4yIlc!5e0!3m2!1ses!2ses!4v1234567890123!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <a class="location-map-frame" href="https://www.google.com/maps/search/?api=1&query=Rancho+de+la+Aldehuela+Torrecaballeros+Segovia" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">
+                        <img src="assets/images/mapa.png" alt="Mapa de ubicación del Rancho de la Aldehuela" class="location-map-image">
+                        <div class="location-map-overlay">
+                            <span class="location-map-chip"><i class="fas fa-diamond-turn-right"></i> Ver ruta</span>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
-            <div class="route-map-section mt-5">
-                <h3 class="text-center mb-4"><i class="fas fa-route me-2"></i>Cómo llegar</h3>
-                <div class="route-map-card">
-                    <div class="route-path">
-                        <div class="route-point active">
-                            <i class="fas fa-city"></i>
-                            <span>Madrid</span>
-                        </div>
-                        <div class="route-line"></div>
-                        <div class="route-point">
-                            <i class="fas fa-map-pin"></i>
-                            <span>Torrecaballeros</span>
-                        </div>
-                        <div class="route-line"></div>
-                        <div class="route-point">
-                            <i class="fas fa-home"></i>
-                            <span>Martín Muñoz</span>
-                        </div>
-                    </div>
-                    <div class="row mt-4 gy-4">
-                        <div class="col-md-6">
-                            <div class="route-card">
-                                <h5><i class="fas fa-car-side me-2"></i>Desde Madrid</h5>
-                                <p>Salida por la A-6 y N-110 hacia Segovia. Continúa por la SG-20 hasta la salida Torrecaballeros y sigue las señales hacia el Rancho de la Aldeguela.</p>
-                                <p><strong>Duración estimada:</strong> 1h 30min</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="route-card">
-                                <h5><i class="fas fa-car-side me-2"></i>Desde Martín Muñoz de las Posadas</h5>
-                                <p>Toma la CL-601 hacia Segovia y luego N-110. Sigue las indicaciones hacia Villaverde de Íscar y Torrecaballeros hasta llegar al Rancho de la Aldeguela.</p>
-                                <p><strong>Duración estimada:</strong> 40 min</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -386,6 +403,68 @@
                     message = '¡Buenas noches! Ya casi se encienden las luces del festival.';
                 }
                 footerMessage.textContent = message;
+            }
+
+            const calendarDateDisplay = document.getElementById('calendar-date-display');
+            const rsvpDateChip = document.getElementById('rsvp-date-chip');
+            const calendarDownload = document.getElementById('calendar-download');
+            const prebodaStart = new Date('2027-02-05T19:00:00+01:00');
+            const prebodaEnd = new Date('2027-02-06T01:00:00+01:00');
+            const bodaStart = new Date('2027-02-06T17:00:00+01:00');
+            const bodaEnd = new Date('2027-02-07T01:30:00+01:00');
+            const formattedShortDate = new Intl.DateTimeFormat('es-ES', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            }).format(bodaStart);
+
+            if (calendarDateDisplay) {
+                calendarDateDisplay.textContent = '5 y 6 de febrero de 2027';
+            }
+
+            if (rsvpDateChip) {
+                rsvpDateChip.textContent = formattedShortDate;
+            }
+
+            const formatIcsDate = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+
+            if (calendarDownload) {
+                calendarDownload.addEventListener('click', () => {
+                    const icsContent = [
+                        'BEGIN:VCALENDAR',
+                        'VERSION:2.0',
+                        'PRODID:-//Carla y Jose//Boda Indie//ES',
+                        'BEGIN:VEVENT',
+                        `UID:preboda-carla-jose-${prebodaStart.getTime()}@carla-jose`,
+                        `DTSTAMP:${formatIcsDate(new Date())}`,
+                        `DTSTART:${formatIcsDate(prebodaStart)}`,
+                        `DTEND:${formatIcsDate(prebodaEnd)}`,
+                        'SUMMARY:Preboda Carla & Jose',
+                        'DESCRIPTION:Preboda de Carla & Jose. Música, bienvenida y cena para abrir el fin de semana.',
+                        'LOCATION:Rancho de la Aldehuela, Torrecaballeros, Segovia',
+                        'END:VEVENT',
+                        'BEGIN:VEVENT',
+                        `UID:boda-carla-jose-${bodaStart.getTime()}@carla-jose`,
+                        `DTSTAMP:${formatIcsDate(new Date())}`,
+                        `DTSTART:${formatIcsDate(bodaStart)}`,
+                        `DTEND:${formatIcsDate(bodaEnd)}`,
+                        'SUMMARY:Boda Carla & Jose',
+                        'DESCRIPTION:Ceremonia y celebración de Carla & Jose. Preboda el 5 de febrero y gran noche el 6 de febrero.',
+                        'LOCATION:Rancho de la Aldehuela, Torrecaballeros, Segovia',
+                        'END:VEVENT',
+                        'END:VCALENDAR'
+                    ].join('\r\n');
+
+                    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'boda-carla-jose.ics';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                });
             }
 
             // Lightbox functionality
