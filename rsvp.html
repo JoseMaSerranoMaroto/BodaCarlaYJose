@@ -418,8 +418,21 @@
                         body: new URLSearchParams(payload)
                     });
 
-                    const result = await response.json();
-                    if (!response.ok || !result.ok) {
+                    const rawResult = await response.text();
+                    let result = null;
+                    if (rawResult.trim()) {
+                        try {
+                            result = JSON.parse(rawResult);
+                        } catch (parseError) {
+                            result = null;
+                        }
+                    }
+
+                    if (!response.ok) {
+                        throw new Error((result && result.error) || 'No se pudo guardar la confirmación.');
+                    }
+
+                    if (result && result.ok === false) {
                         throw new Error(result.error || 'No se pudo guardar la confirmación.');
                     }
 
