@@ -20,7 +20,6 @@
                 <ul class="navbar-nav ms-auto nav-menu">
                     <li class="nav-item"><a class="nav-link nav-link-modern" href="index.html#inicio">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-modern active" href="#rsvp-form">Asistencia</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-modern" href="#calendar-tools">Calendario</a></li>
                 </ul>
             </div>
         </div>
@@ -44,89 +43,64 @@
 
         <section id="rsvp-form" class="rsvp-form-section pb-5">
             <div class="container">
-                <div class="rsvp-form-layout">
+                <div class="rsvp-form-layout rsvp-form-layout-single">
                     <div class="rsvp-form-panel">
                         <form id="wedding-rsvp-form" novalidate>
                             <div class="rsvp-form-grid">
                                 <div class="form-field form-field-full">
-                                    <label for="fullName">Nombre y apellidos</label>
+                                    <label for="fullName">Nombre</label>
                                     <input id="fullName" name="fullName" type="text" placeholder="Tu nombre completo" required>
                                 </div>
 
-                                <div class="form-field">
+                                <div class="form-field form-field-full">
                                     <label for="email">Email</label>
-                                    <input id="email" name="email" type="email" placeholder="nombre@email.com" required>
-                                </div>
-
-                                <div class="form-field">
-                                    <label for="phone">Teléfono</label>
-                                    <input id="phone" name="phone" type="tel" placeholder="600 000 000" required>
+                                    <input id="email" name="email" type="email" placeholder="nombre@email.com">
                                 </div>
 
                                 <div class="form-field form-field-full">
-                                    <label>¿Podrás venir?</label>
+                                    <label>¿Asistirás?</label>
                                     <div class="choice-grid" data-choice-group="attendance">
                                         <label class="choice-pill">
-                                            <input type="radio" name="attendance" value="Sí, allí estaré" required>
-                                            <span>Sí, allí estaré</span>
+                                            <input type="radio" name="attendance" value="Sí" required>
+                                            <span>Sí</span>
                                         </label>
                                         <label class="choice-pill">
-                                            <input type="radio" name="attendance" value="No podré asistir">
-                                            <span>No podré asistir</span>
+                                            <input type="radio" name="attendance" value="No">
+                                            <span>No</span>
                                         </label>
                                         <label class="choice-pill">
-                                            <input type="radio" name="attendance" value="Aún no lo sé">
-                                            <span>Aún no lo sé</span>
+                                            <input type="radio" name="attendance" value="No sé">
+                                            <span>No sé</span>
                                         </label>
                                     </div>
                                 </div>
 
                                 <div class="form-field form-field-full attendance-conditional">
-                                    <label>¿Te apuntas también a la preboda del viernes?</label>
+                                    <label>¿Vendrás también a la preboda del viernes?</label>
                                     <div class="choice-grid" data-choice-group="prebodaAttendance">
                                         <label class="choice-pill">
-                                            <input type="radio" name="prebodaAttendance" value="Sí, voy a la preboda">
-                                            <span>Sí, voy a la preboda</span>
+                                            <input type="radio" name="prebodaAttendance" value="Sí, iré también a la preboda">
+                                            <span>Sí</span>
                                         </label>
                                         <label class="choice-pill">
-                                            <input type="radio" name="prebodaAttendance" value="Solo iré a la boda del sábado">
-                                            <span>Solo el sábado</span>
+                                            <input type="radio" name="prebodaAttendance" value="No, solo iré a la boda">
+                                            <span>No</span>
                                         </label>
                                         <label class="choice-pill">
-                                            <input type="radio" name="prebodaAttendance" value="Aún por decidir">
-                                            <span>Aún por decidir</span>
+                                            <input type="radio" name="prebodaAttendance" value="Aún no lo sé">
+                                            <span>No sé</span>
                                         </label>
                                     </div>
                                 </div>
 
                                 <div class="form-field attendance-conditional">
-                                    <label for="guestsCount">Número de acompañantes</label>
-                                    <select id="guestsCount" name="guestsCount">
-                                        <option value="0">Voy sin acompañantes</option>
-                                        <option value="1">1 acompañante</option>
-                                        <option value="2">2 acompañantes</option>
-                                        <option value="3">3 acompañantes</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-field attendance-conditional">
-                                    <label for="transportPlan">Transporte</label>
-                                    <select id="transportPlan" name="transportPlan">
-                                        <option value="Voy por mi cuenta">Voy por mi cuenta</option>
-                                        <option value="Me gustaría coordinar coche con otros invitados">Me gustaría coordinar coche</option>
-                                        <option value="Necesito ayuda con transporte">Necesito ayuda con transporte</option>
-                                    </select>
-                                </div>
-
-                                <div id="companions-wrapper" class="form-field form-field-full attendance-conditional companions-wrapper"></div>
-
-                                <div class="form-field attendance-conditional">
-                                    <label for="menuType">Preferencia de menú</label>
+                                    <label for="menuType">Tipo de menú</label>
                                     <select id="menuType" name="menuType">
                                         <option value="Sin preferencias especiales">Sin preferencias especiales</option>
                                         <option value="Vegetariano">Vegetariano</option>
                                         <option value="Vegano">Vegano</option>
                                         <option value="Sin gluten">Sin gluten</option>
+                                        <option value="Sin lactosa">Sin lactosa</option>
                                         <option value="Otro">Otro</option>
                                     </select>
                                 </div>
@@ -142,8 +116,58 @@
                                 </div>
 
                                 <div class="form-field form-field-full attendance-conditional">
-                                    <label for="songRequest">Canción que te gustaría escuchar</label>
-                                    <input id="songRequest" name="songRequest" type="text" placeholder="Déjanos una recomendación musical">
+                                    <label>¿Vienes con acompañante?</label>
+                                    <div class="choice-grid" data-choice-group="hasCompanion">
+                                        <label class="choice-pill">
+                                            <input type="radio" name="hasCompanion" value="Sí">
+                                            <span>Sí</span>
+                                        </label>
+                                        <label class="choice-pill">
+                                            <input type="radio" name="hasCompanion" value="No" checked>
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div id="companion-details" class="form-field form-field-full attendance-conditional hidden-field companions-wrapper">
+                                    <div class="companion-grid">
+                                        <div class="form-field">
+                                            <label for="companionName">Nombre del acompañante</label>
+                                            <input id="companionName" name="companionName" type="text" placeholder="Nombre del acompañante">
+                                        </div>
+                                        <div class="form-field form-field-full">
+                                            <label>¿Vendrá también a la preboda del viernes?</label>
+                                            <div class="choice-grid" data-choice-group="companionPrebodaAttendance">
+                                                <label class="choice-pill">
+                                                    <input type="radio" name="companionPrebodaAttendance" value="Sí, irá también a la preboda">
+                                                    <span>Sí</span>
+                                                </label>
+                                                <label class="choice-pill">
+                                                    <input type="radio" name="companionPrebodaAttendance" value="No, solo irá a la boda">
+                                                    <span>No</span>
+                                                </label>
+                                                <label class="choice-pill">
+                                                    <input type="radio" name="companionPrebodaAttendance" value="Aún no lo sabe">
+                                                    <span>No sé</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label for="companionMenu">Tipo de menú del acompañante</label>
+                                            <select id="companionMenu" name="companionMenu">
+                                                <option value="Sin preferencias especiales">Sin preferencias especiales</option>
+                                                <option value="Vegetariano">Vegetariano</option>
+                                                <option value="Vegano">Vegano</option>
+                                                <option value="Sin gluten">Sin gluten</option>
+                                                <option value="Sin lactosa">Sin lactosa</option>
+                                                <option value="Otro">Otro</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-field form-field-full">
+                                            <label for="companionAllergies">Alergias o intolerancias del acompañante</label>
+                                            <textarea id="companionAllergies" name="companionAllergies" rows="3" placeholder="Si no tiene, puedes dejarlo vacío"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="form-field form-field-full">
@@ -162,7 +186,7 @@
                             <div class="rsvp-form-actions">
                                 <button type="submit" class="rsvp-action-button rsvp-action-primary rsvp-submit-button">
                                     <i class="fas fa-sparkles"></i>
-                                    <span>Generar mi confirmación</span>
+                                    <span>Guardar confirmación</span>
                                 </button>
                                 <a class="rsvp-action-button" href="index.html#asistencia">
                                     <i class="fas fa-arrow-left"></i>
@@ -173,37 +197,18 @@
                     </div>
 
                     <aside class="rsvp-side-panel">
-                        <div id="calendar-tools" class="rsvp-card rsvp-card-calendar sticky-panel">
-                            <div class="rsvp-kicker">Save The Date</div>
-                            <h2 class="rsvp-title">Añádelo a tu calendario</h2>
-                            <p class="rsvp-copy">Guarda ya la preboda del viernes y la boda del sábado en un solo gesto.</p>
-                            <div class="rsvp-actions">
-                                <button id="calendar-download" type="button" class="rsvp-action-button rsvp-action-primary calendar-download-button">
-                                    <i class="fas fa-calendar-plus"></i>
-                                    <span>Añadir a tu calendario</span>
-                                </button>
-                            </div>
-                        </div>
-
                         <div id="rsvp-result" class="rsvp-card rsvp-result-card hidden-field" aria-live="polite">
                             <div class="rsvp-kicker">Resumen</div>
                             <h2 class="rsvp-title">Tu confirmación está lista</h2>
-                            <p class="rsvp-copy">Revisa el resumen y envíalo por el canal que prefieras.</p>
+                            <p class="rsvp-copy">Revisa el resumen de tu respuesta y el estado del guardado.</p>
                             <div id="rsvp-summary" class="rsvp-summary"></div>
                             <div class="rsvp-actions">
-                                <a id="rsvp-whatsapp" class="rsvp-action-button rsvp-action-primary" href="#" target="_blank" rel="noopener noreferrer">
-                                    <i class="fab fa-whatsapp"></i>
-                                    <span>Enviar por WhatsApp</span>
-                                </a>
-                                <a id="rsvp-email" class="rsvp-action-button" href="#">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Enviar por email</span>
-                                </a>
                                 <button id="rsvp-copy" type="button" class="rsvp-action-button">
                                     <i class="fas fa-copy"></i>
                                     <span>Copiar resumen</span>
                                 </button>
                             </div>
+                            <p id="rsvp-save-status" class="rsvp-copy"></p>
                         </div>
                     </aside>
                 </div>
@@ -239,6 +244,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbxJgZiunJM0MgTTMb5yPhSZjDo7x6XTdyGLGpG75RX--apYbbancEjjD1QsK9VRDr4/exec';
             const footerYear = document.getElementById('footer-year');
             const footerMessage = document.getElementById('footer-message');
             const now = new Date();
@@ -254,93 +260,50 @@
                         : '¡Buenas noches! Deja tu confirmación cuando quieras.';
             }
 
-            const prebodaStart = new Date('2027-02-05T19:00:00+01:00');
-            const prebodaEnd = new Date('2027-02-06T01:00:00+01:00');
-            const bodaStart = new Date('2027-02-06T17:00:00+01:00');
-            const bodaEnd = new Date('2027-02-07T01:30:00+01:00');
-            const calendarDownload = document.getElementById('calendar-download');
-
-            const formatIcsDate = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-            if (calendarDownload) {
-                calendarDownload.addEventListener('click', () => {
-                    const icsContent = [
-                        'BEGIN:VCALENDAR',
-                        'VERSION:2.0',
-                        'PRODID:-//Carla y Jose//Boda Indie//ES',
-                        'BEGIN:VEVENT',
-                        `UID:preboda-carla-jose-${prebodaStart.getTime()}@carla-jose`,
-                        `DTSTAMP:${formatIcsDate(new Date())}`,
-                        `DTSTART:${formatIcsDate(prebodaStart)}`,
-                        `DTEND:${formatIcsDate(prebodaEnd)}`,
-                        'SUMMARY:Preboda Carla & Jose',
-                        'DESCRIPTION:Preboda de Carla & Jose. Música, bienvenida y cena para abrir el fin de semana.',
-                        'LOCATION:Rancho de la Aldehuela, Torrecaballeros, Segovia',
-                        'END:VEVENT',
-                        'BEGIN:VEVENT',
-                        `UID:boda-carla-jose-${bodaStart.getTime()}@carla-jose`,
-                        `DTSTAMP:${formatIcsDate(new Date())}`,
-                        `DTSTART:${formatIcsDate(bodaStart)}`,
-                        `DTEND:${formatIcsDate(bodaEnd)}`,
-                        'SUMMARY:Boda Carla & Jose',
-                        'DESCRIPTION:Ceremonia y celebración de Carla & Jose. Preboda el 5 de febrero y gran noche el 6 de febrero.',
-                        'LOCATION:Rancho de la Aldehuela, Torrecaballeros, Segovia',
-                        'END:VEVENT',
-                        'END:VCALENDAR'
-                    ].join('\r\n');
-                    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-                    const url = URL.createObjectURL(blob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = 'boda-carla-jose.ics';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    URL.revokeObjectURL(url);
-                });
-            }
-
             const form = document.getElementById('wedding-rsvp-form');
             const attendanceInputs = document.querySelectorAll('input[name="attendance"]');
             const prebodaInputs = document.querySelectorAll('input[name="prebodaAttendance"]');
-            const companionsWrapper = document.getElementById('companions-wrapper');
-            const guestsCount = document.getElementById('guestsCount');
+            const companionInputs = document.querySelectorAll('input[name="hasCompanion"]');
+            const companionPrebodaInputs = document.querySelectorAll('input[name="companionPrebodaAttendance"]');
+            const companionDetails = document.getElementById('companion-details');
+            const noCompanionInput = [...companionInputs].find((input) => input.value === 'No');
             const menuType = document.getElementById('menuType');
             const customMenuWrapper = document.getElementById('custom-menu-wrapper');
             const resultCard = document.getElementById('rsvp-result');
             const summaryBox = document.getElementById('rsvp-summary');
-            const whatsappLink = document.getElementById('rsvp-whatsapp');
-            const emailLink = document.getElementById('rsvp-email');
+            const saveStatus = document.getElementById('rsvp-save-status');
             const copyButton = document.getElementById('rsvp-copy');
             const conditionalFields = document.querySelectorAll('.attendance-conditional');
-
-            const buildCompanionFields = (count) => {
-                companionsWrapper.innerHTML = '';
-                if (!count) {
-                    return;
-                }
-                const companionGrid = document.createElement('div');
-                companionGrid.className = 'companion-grid';
-                for (let index = 1; index <= count; index += 1) {
-                    const field = document.createElement('div');
-                    field.className = 'form-field';
-                    field.innerHTML = `
-                        <label for="guest-${index}">Acompañante ${index}</label>
-                        <input id="guest-${index}" name="guest-${index}" type="text" placeholder="Nombre del acompañante ${index}">
-                    `;
-                    companionGrid.appendChild(field);
-                }
-                companionsWrapper.appendChild(companionGrid);
-            };
+            const submitButton = form.querySelector('button[type="submit"]');
+            const submitButtonLabel = submitButton.querySelector('span');
 
             const toggleAttendanceFields = () => {
                 const selected = document.querySelector('input[name="attendance"]:checked');
-                const isAttending = selected && selected.value === 'Sí, allí estaré';
+                const isAttending = selected && selected.value === 'Sí';
                 conditionalFields.forEach((field) => {
+                    if (field === companionDetails) {
+                        return;
+                    }
                     field.classList.toggle('hidden-field', !isAttending);
                 });
                 if (!isAttending) {
-                    guestsCount.value = '0';
-                    buildCompanionFields(0);
+                    companionDetails.classList.add('hidden-field');
+                    return;
+                }
+                toggleCompanionFields();
+            };
+
+            const toggleCompanionFields = () => {
+                const selected = document.querySelector('input[name="hasCompanion"]:checked');
+                const hasCompanion = selected && selected.value === 'Sí';
+                companionDetails.classList.toggle('hidden-field', !hasCompanion);
+                if (!hasCompanion) {
+                    document.getElementById('companionName').value = '';
+                    companionPrebodaInputs.forEach((input) => {
+                        input.checked = false;
+                    });
+                    document.getElementById('companionMenu').value = 'Sin preferencias especiales';
+                    document.getElementById('companionAllergies').value = '';
                 }
             };
 
@@ -348,8 +311,8 @@
                 input.addEventListener('change', toggleAttendanceFields);
             });
 
-            guestsCount.addEventListener('change', (event) => {
-                buildCompanionFields(Number(event.target.value));
+            companionInputs.forEach((input) => {
+                input.addEventListener('change', toggleCompanionFields);
             });
 
             menuType.addEventListener('change', (event) => {
@@ -362,18 +325,18 @@
             });
 
             const formatSummary = (data) => {
-                const companions = data.companions.length ? data.companions.join(', ') : 'Sin acompañantes';
                 return [
                     `Nombre: ${data.fullName}`,
-                    `Email: ${data.email}`,
-                    `Teléfono: ${data.phone}`,
+                    `Email: ${data.email || 'No indicado'}`,
                     `Asistencia: ${data.attendance}`,
-                    `Preboda: ${data.prebodaAttendance}`,
-                    `Acompañantes: ${companions}`,
+                    `Preboda: ${data.prebodaAttendance || 'Sin responder'}`,
+                    `Acompañante: ${data.hasCompanion}`,
+                    `Nombre acompañante: ${data.companionName || 'No aplica'}`,
+                    `Preboda acompañante: ${data.companionPrebodaAttendance || 'No aplica'}`,
                     `Menú: ${data.menu}`,
                     `Alergias: ${data.allergies || 'Sin observaciones'}`,
-                    `Transporte: ${data.transportPlan}`,
-                    `Canción sugerida: ${data.songRequest || 'Sin sugerencia'}`,
+                    `Menú acompañante: ${data.companionMenu || 'No aplica'}`,
+                    `Alergias acompañante: ${data.companionAllergies || 'No aplica'}`,
                     `Mensaje: ${data.message || 'Sin mensaje adicional'}`
                 ].join('\n');
             };
@@ -382,14 +345,33 @@
                 summaryBox.innerHTML = `
                     <div class="rsvp-summary-item"><span>Nombre</span><strong>${data.fullName}</strong></div>
                     <div class="rsvp-summary-item"><span>Asistencia</span><strong>${data.attendance}</strong></div>
-                    <div class="rsvp-summary-item"><span>Preboda</span><strong>${data.prebodaAttendance}</strong></div>
-                    <div class="rsvp-summary-item"><span>Acompañantes</span><strong>${data.companions.length ? data.companions.join(', ') : 'Sin acompañantes'}</strong></div>
+                    <div class="rsvp-summary-item"><span>Preboda</span><strong>${data.prebodaAttendance || 'Sin responder'}</strong></div>
+                    <div class="rsvp-summary-item"><span>Email</span><strong>${data.email || 'No indicado'}</strong></div>
+                    <div class="rsvp-summary-item"><span>Acompañante</span><strong>${data.hasCompanion}</strong></div>
+                    <div class="rsvp-summary-item"><span>Preboda acompañante</span><strong>${data.companionPrebodaAttendance || 'No aplica'}</strong></div>
                     <div class="rsvp-summary-item"><span>Menú</span><strong>${data.menu}</strong></div>
-                    <div class="rsvp-summary-item"><span>Transporte</span><strong>${data.transportPlan}</strong></div>
+                    <div class="rsvp-summary-item"><span>Alergias</span><strong>${data.allergies || 'Sin observaciones'}</strong></div>
                 `;
             };
 
-            form.addEventListener('submit', (event) => {
+            const buildSheetPayload = (data) => {
+                return {
+                    nombreCompleto: data.fullName,
+                    email: data.email,
+                    asistencia: data.attendance,
+                    asistenciaPreboda: data.prebodaAttendance,
+                    menu: data.menu,
+                    alergias: data.allergies,
+                    vieneConAcompanante: data.hasCompanion,
+                    nombreAcompanante: data.companionName,
+                    asistenciaPrebodaAcompanante: data.companionPrebodaAttendance,
+                    menuAcompanante: data.companionMenu,
+                    alergiasAcompanante: data.companionAllergies,
+                    mensaje: data.message
+                };
+            };
+
+            form.addEventListener('submit', async (event) => {
                 event.preventDefault();
                 if (!form.checkValidity()) {
                     form.reportValidity();
@@ -398,9 +380,8 @@
 
                 const attendance = document.querySelector('input[name="attendance"]:checked')?.value || 'Sin responder';
                 const prebodaAttendance = document.querySelector('input[name="prebodaAttendance"]:checked')?.value || 'Sin responder';
-                const companionNames = [...companionsWrapper.querySelectorAll('input')]
-                    .map((input) => input.value.trim())
-                    .filter(Boolean);
+                const hasCompanion = document.querySelector('input[name="hasCompanion"]:checked')?.value || 'No';
+                const companionPrebodaAttendance = document.querySelector('input[name="companionPrebodaAttendance"]:checked')?.value || '';
                 const customMenu = document.getElementById('customMenu');
                 const menuLabel = menuType.value === 'Otro' && customMenu && customMenu.value.trim()
                     ? customMenu.value.trim()
@@ -409,14 +390,15 @@
                 const formData = {
                     fullName: document.getElementById('fullName').value.trim(),
                     email: document.getElementById('email').value.trim(),
-                    phone: document.getElementById('phone').value.trim(),
                     attendance,
                     prebodaAttendance,
-                    companions: companionNames,
+                    hasCompanion,
+                    companionName: document.getElementById('companionName').value.trim(),
+                    companionPrebodaAttendance: hasCompanion === 'Sí' ? companionPrebodaAttendance : '',
                     menu: menuLabel,
                     allergies: document.getElementById('allergies').value.trim(),
-                    transportPlan: document.getElementById('transportPlan').value,
-                    songRequest: document.getElementById('songRequest').value.trim(),
+                    companionMenu: document.getElementById('companionMenu').value,
+                    companionAllergies: document.getElementById('companionAllergies').value.trim(),
                     message: document.getElementById('message').value.trim()
                 };
 
@@ -425,14 +407,32 @@
                 resultCard.classList.remove('hidden-field');
                 resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-                localStorage.setItem('carla-jose-rsvp-draft', JSON.stringify(formData));
+                submitButton.disabled = true;
+                submitButtonLabel.textContent = 'Guardando...';
+                saveStatus.textContent = 'Guardando tu confirmación en la hoja de invitados...';
 
-                const whatsappMessage = encodeURIComponent(`Hola, os envío mi RSVP para la boda:\n\n${summaryText}`);
-                whatsappLink.href = `https://wa.me/34660566010?text=${whatsappMessage}`;
+                try {
+                    const payload = buildSheetPayload(formData);
+                    const response = await fetch(googleScriptUrl, {
+                        method: 'POST',
+                        body: new URLSearchParams(payload)
+                    });
 
-                const emailSubject = encodeURIComponent('RSVP boda Carla & Jose');
-                const emailBody = encodeURIComponent(`Hola, os envío mi RSVP para la boda:\n\n${summaryText}`);
-                emailLink.href = `mailto:jserranomaroto@gmail.com,carlita_agg@hotmail.com?subject=${emailSubject}&body=${emailBody}`;
+                    const result = await response.json();
+                    if (!response.ok || !result.ok) {
+                        throw new Error(result.error || 'No se pudo guardar la confirmación.');
+                    }
+
+                    localStorage.setItem('carla-jose-rsvp-draft', JSON.stringify(formData));
+                    saveStatus.textContent = 'Confirmación guardada correctamente en la hoja de cálculo.';
+                    submitButtonLabel.textContent = 'Confirmación guardada';
+                } catch (error) {
+                    console.error('No se pudo guardar el RSVP', error);
+                    saveStatus.textContent = 'No se pudo guardar automáticamente. Revisa la configuración del script e inténtalo de nuevo.';
+                    submitButtonLabel.textContent = 'Reintentar guardado';
+                } finally {
+                    submitButton.disabled = false;
+                }
             });
 
             copyButton.addEventListener('click', async () => {
@@ -452,17 +452,17 @@
             });
 
             const savedDraft = localStorage.getItem('carla-jose-rsvp-draft');
+            if (noCompanionInput) {
+                noCompanionInput.checked = true;
+            }
             if (savedDraft) {
                 try {
                     const data = JSON.parse(savedDraft);
                     document.getElementById('fullName').value = data.fullName || '';
                     document.getElementById('email').value = data.email || '';
-                    document.getElementById('phone').value = data.phone || '';
                     document.getElementById('allergies').value = data.allergies || '';
-                    document.getElementById('songRequest').value = data.songRequest || '';
                     document.getElementById('message').value = data.message || '';
-                    document.getElementById('transportPlan').value = data.transportPlan || 'Voy por mi cuenta';
-                    menuType.value = ['Sin preferencias especiales', 'Vegetariano', 'Vegano', 'Sin gluten'].includes(data.menu)
+                    menuType.value = ['Sin preferencias especiales', 'Vegetariano', 'Vegano', 'Sin gluten', 'Sin lactosa'].includes(data.menu)
                         ? data.menu
                         : 'Otro';
                     if (menuType.value === 'Otro' && data.menu) {
@@ -477,18 +477,26 @@
                     if (prebodaInput) {
                         prebodaInput.checked = true;
                     }
-                    const count = data.companions ? data.companions.length : 0;
-                    guestsCount.value = String(count);
-                    buildCompanionFields(count);
-                    [...companionsWrapper.querySelectorAll('input')].forEach((input, index) => {
-                        input.value = data.companions[index] || '';
-                    });
+                    const companionInput = [...companionInputs].find((input) => input.value === data.hasCompanion);
+                    if (companionInput) {
+                        companionInput.checked = true;
+                    }
+                    if (data.hasCompanion === 'Sí') {
+                        document.getElementById('companionName').value = data.companionName || '';
+                        const companionPrebodaInput = [...companionPrebodaInputs].find((input) => input.value === data.companionPrebodaAttendance);
+                        if (companionPrebodaInput) {
+                            companionPrebodaInput.checked = true;
+                        }
+                        document.getElementById('companionMenu').value = data.companionMenu || 'Sin preferencias especiales';
+                        document.getElementById('companionAllergies').value = data.companionAllergies || '';
+                    }
                 } catch (error) {
                     console.log('No se pudo recuperar el borrador RSVP', error);
                 }
             }
 
             toggleAttendanceFields();
+            toggleCompanionFields();
         });
     </script>
 </body>

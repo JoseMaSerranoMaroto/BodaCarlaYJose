@@ -1006,6 +1006,12 @@ h2 {
     align-items: start;
 }
 
+.rsvp-form-layout-single {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .rsvp-form-panel,
 .rsvp-side-panel {
     min-width: 0;
@@ -1146,6 +1152,10 @@ h2 {
 
 .rsvp-result-card {
     margin-top: 1.5rem;
+}
+
+.rsvp-form-layout-single .rsvp-result-card {
+    margin-top: 0;
 }
 
 .rsvp-summary {
