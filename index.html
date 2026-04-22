@@ -142,11 +142,11 @@
                             </div>
                             <div class="event-item">
                                 <i class="fas fa-music"></i>
-                                <span>Música indie en vivo</span>
+                                <span>Música y baile</span>
                             </div>
                             <div class="event-item">
                                 <i class="fas fa-utensils"></i>
-                                <span>Cena al aire libre</span>
+                                <span>Cena</span>
                             </div>
                             <div class="event-item">
                                 <i class="fas fa-glass-cheers"></i>
@@ -167,7 +167,7 @@
                         <div class="event-details">
                             <div class="event-item">
                                 <i class="fas fa-clock"></i>
-                                <span>17:00 - Ceremonia rockera</span>
+                                <span>17:00 - Ceremonia</span>
                             </div>
                             <div class="event-item">
                                 <i class="fas fa-camera"></i>
@@ -179,7 +179,7 @@
                             </div>
                             <div class="event-item">
                                 <i class="fas fa-music"></i>
-                                <span>Fiesta con DJ indie y baile</span>
+                                <span>Fiesta con DJ y baile</span>
                             </div>
                         </div>
                     </div>
@@ -462,107 +462,59 @@
             const audioControls = document.getElementById('audio-controls');
 
             if (audioToggle && audioControls) {
-                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-                let audioContext = null;
+                // Coloca aqui tus archivos locales para evitar bloqueos de YouTube/Spotify.
+                const audioSources = [
+                    'assets/audio/emborracharme.mp3.mp4',
+                    'assets/audio/emborracharme.mp3',
+                    'assets/audio/emborracharme.ogg'
+                ];
+                const backgroundAudio = new Audio();
+                backgroundAudio.loop = true;
+                backgroundAudio.preload = 'none';
+                backgroundAudio.volume = 0.45;
                 let isPlaying = false;
-                let noteTimer = null;
-                let stepIndex = 0;
-                const beatMs = 420;
-                const leadPattern = [
-                    440.0, 523.25, 587.33, 659.25,
-                    587.33, 523.25, 440.0, 392.0,
-                    440.0, 523.25, 659.25, 698.46,
-                    659.25, 587.33, 523.25, 392.0
-                ];
-                const bassPattern = [
-                    146.83, 146.83, 196.0, 196.0,
-                    174.61, 174.61, 130.81, 130.81
-                ];
+                let currentSourceIndex = 0;
+                let resumeOnVisible = false;
 
-                const createSynth = () => {
-                    if (!AudioContextClass) {
-                        throw new Error('Web Audio API no disponible');
-                    }
-                    if (!audioContext) {
-                        audioContext = new AudioContextClass();
-                    }
-                    return audioContext;
+                const setAudioSource = (index) => {
+                    backgroundAudio.src = audioSources[index];
+                    backgroundAudio.load();
                 };
 
-                const playNote = (frequency, duration, volume, type, when) => {
-                    if (!audioContext) {
-                        return;
+                const playWithFallback = async () => {
+                    for (let i = currentSourceIndex; i < audioSources.length; i += 1) {
+                        try {
+                            setAudioSource(i);
+                            await backgroundAudio.play();
+                            currentSourceIndex = i;
+                            return;
+                        } catch (error) {
+                            // Prueba la siguiente fuente de audio.
+                        }
                     }
-
-                    const oscillator = audioContext.createOscillator();
-                    const gainNode = audioContext.createGain();
-                    oscillator.type = type;
-                    oscillator.frequency.setValueAtTime(frequency, when);
-                    gainNode.gain.setValueAtTime(0.0001, when);
-                    gainNode.gain.exponentialRampToValueAtTime(volume, when + 0.02);
-                    gainNode.gain.exponentialRampToValueAtTime(0.0001, when + duration);
-                    oscillator.connect(gainNode);
-                    gainNode.connect(audioContext.destination);
-                    oscillator.start(when);
-                    oscillator.stop(when + duration + 0.03);
-                };
-
-                const scheduleStep = () => {
-                    if (!audioContext || !isPlaying) {
-                        return;
-                    }
-
-                    const when = audioContext.currentTime + 0.02;
-                    const leadFreq = leadPattern[stepIndex % leadPattern.length];
-                    const bassFreq = bassPattern[stepIndex % bassPattern.length];
-
-                    playNote(leadFreq, 0.24, 0.045, 'triangle', when);
-                    playNote(bassFreq, 0.32, 0.02, 'sine', when);
-
-                    if (stepIndex % 4 === 0) {
-                        playNote(leadFreq / 2, 0.12, 0.012, 'square', when);
-                    }
-
-                    stepIndex += 1;
-                };
-
-                const stopLoop = () => {
-                    if (noteTimer) {
-                        window.clearInterval(noteTimer);
-                        noteTimer = null;
-                    }
-                };
-
-                const startLoop = async () => {
-                    const context = createSynth();
-                    if (context.state === 'suspended') {
-                        await context.resume();
-                    }
-                    stepIndex = 0;
-                    scheduleStep();
-                    noteTimer = window.setInterval(scheduleStep, beatMs);
+                    throw new Error('No se pudo reproducir ningun archivo de audio.');
                 };
 
                 const toggleAudio = async () => {
                     try {
                         if (isPlaying) {
-                            stopLoop();
-                            if (audioContext && audioContext.state !== 'closed') {
-                                await audioContext.suspend();
-                            }
+                            backgroundAudio.pause();
                             audioToggle.classList.add('muted');
                             audioControls.classList.add('muted');
                             isPlaying = false;
+                            resumeOnVisible = false;
                         } else {
+                            await playWithFallback();
                             isPlaying = true;
-                            await startLoop();
                             audioToggle.classList.remove('muted');
                             audioControls.classList.remove('muted');
+                            resumeOnVisible = true;
                         }
                     } catch (error) {
                         isPlaying = false;
+                        resumeOnVisible = false;
                         console.log('Audio play failed:', error);
-                        // Fallback for browsers that require user interaction
+                        // Aviso visual rapido si falta el archivo o el navegador bloquea la reproduccion.
                         audioToggle.style.color = '#ff6b6b';
                         setTimeout(() => {
                             audioToggle.style.color = '';
@@ -583,9 +535,11 @@
 
                 document.addEventListener('visibilitychange', () => {
                     if (document.hidden && isPlaying) {
-                        stopLoop();
-                    } else if (!document.hidden && isPlaying && !noteTimer) {
-                        noteTimer = window.setInterval(scheduleStep, beatMs);
+                        backgroundAudio.pause();
+                    } else if (!document.hidden && resumeOnVisible && isPlaying) {
+                        backgroundAudio.play().catch(() => {
+                            // Si el navegador vuelve a bloquear, se queda en pausa hasta nueva interaccion.
+                        });
                     }
                 });
             }
