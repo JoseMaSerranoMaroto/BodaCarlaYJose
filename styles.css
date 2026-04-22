@@ -207,8 +207,30 @@ body {
         text-align: center;
     }
 
+    .footer-message {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .footer-bottom {
         justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding-bottom: 6rem !important;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.35rem;
+        text-align: center;
+    }
+
+    .footer-dot {
+        display: none;
     }
 }
 
@@ -639,6 +661,32 @@ h2 {
     border-radius: 0;
     padding: 1rem 1.2rem;
     border: 1px solid #4ecdc4;
+}
+
+.gallery-section {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 107, 107, 0.14), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(78, 205, 196, 0.14), transparent 40%),
+        linear-gradient(180deg, rgba(14, 14, 14, 0.96), rgba(22, 22, 22, 0.98));
+    border-top: 1px solid rgba(255, 107, 107, 0.18);
+    border-bottom: 1px solid rgba(78, 205, 196, 0.14);
+}
+
+.gallery-section h2 {
+    color: #ff6b6b;
+}
+
+.gallery-section .carousel-indicators [data-bs-target] {
+    background-color: rgba(248, 249, 250, 0.45);
+}
+
+.gallery-section .carousel-indicators .active {
+    background-color: #4ecdc4;
+}
+
+.gallery-section .carousel-control-prev-icon,
+.gallery-section .carousel-control-next-icon {
+    filter: none;
 }
 
 .placeholder-card {
