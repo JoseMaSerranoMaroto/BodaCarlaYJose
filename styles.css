@@ -65,8 +65,8 @@ body {
     background: rgba(0,0,0,0.5);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 2rem;
-    padding: 1.5rem;
-    max-width: 540px;
+    padding: 2rem;
+    max-width: 680px;
     width: 100%;
     color: #fff;
     backdrop-filter: blur(14px);
@@ -74,7 +74,7 @@ body {
 }
 
 .entrada-image-wrapper {
-    max-width: 520px;
+    max-width: 620px;
     margin: 0 auto;
     border-radius: 1.5rem;
     overflow: hidden;
@@ -113,9 +113,11 @@ body {
 }
 
 .entrada-note {
-    font-size: 0.95rem;
+    font-size: 1.18rem;
+    line-height: 1.45;
+    max-width: 580px;
+    margin: 1rem auto 0;
     color: rgba(248,248,250,0.82);
-    margin-top: 0.8rem;
 }
 
 .footer {
@@ -298,6 +300,19 @@ body {
 }
 
 @media (max-width: 576px) {
+    .entrada-card {
+        padding: 1.2rem;
+        max-width: 96vw;
+    }
+
+    .entrada-image-wrapper {
+        max-width: 100%;
+    }
+
+    .entrada-note {
+        font-size: 1rem;
+    }
+
     .audio-controls {
         bottom: 1rem;
         right: 1rem;

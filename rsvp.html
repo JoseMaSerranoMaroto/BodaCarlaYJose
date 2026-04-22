@@ -30,12 +30,12 @@
         <section class="rsvp-page-hero">
             <div class="container">
                 <div class="rsvp-page-hero-card">
-                    <div class="rsvp-kicker">RSVP Live</div>
+                    <div class="rsvp-kicker">Confirmación</div>
                     <h1 class="rsvp-page-title">Confirma tu asistencia al festival</h1>
-                    <p class="rsvp-page-copy">Déjanos aquí tu respuesta, acompañantes y cualquier detalle importante para organizar la boda con calma y sin perseguir a nadie por WhatsApp.</p>
+                    <p class="rsvp-page-copy">Déjanos aquí tu respuesta, acompañantes y cualquier detalle importante para organizarlo todo con tiempo.</p>
                     <div class="rsvp-page-badges">
-                        <span class="rsvp-status-pill">Preboda: viernes 5 febrero</span>
-                        <span class="rsvp-date-chip">Boda: sábado 6 febrero 2027</span>
+                        <span class="rsvp-status-pill">Preboda: viernes 5 de febrero</span>
+                        <span class="rsvp-date-chip">Boda: sábado 6 de febrero de 2027</span>
                     </div>
                 </div>
             </div>
@@ -48,8 +48,8 @@
                         <form id="wedding-rsvp-form" novalidate>
                             <div class="rsvp-form-grid">
                                 <div class="form-field form-field-full">
-                                    <label for="fullName">Nombre</label>
-                                    <input id="fullName" name="fullName" type="text" placeholder="Tu nombre completo" required>
+                                    <label for="fullName">Nombre y apellidos</label>
+                                    <input id="fullName" name="fullName" type="text" placeholder="Escribe tu nombre completo" required>
                                 </div>
 
                                 <div class="form-field form-field-full">
@@ -88,7 +88,7 @@
                                         </label>
                                         <label class="choice-pill">
                                             <input type="radio" name="prebodaAttendance" value="Aún no lo sé">
-                                            <span>No sé</span>
+                                            <span>Aún no lo sé</span>
                                         </label>
                                     </div>
                                 </div>
@@ -106,7 +106,7 @@
                                 </div>
 
                                 <div class="form-field attendance-conditional hidden-field" id="custom-menu-wrapper">
-                                    <label for="customMenu">Cuéntanos cuál</label>
+                                    <label for="customMenu">Cuéntanos cuál es</label>
                                     <input id="customMenu" name="customMenu" type="text" placeholder="Describe tu necesidad de menú">
                                 </div>
 
@@ -148,7 +148,7 @@
                                                 </label>
                                                 <label class="choice-pill">
                                                     <input type="radio" name="companionPrebodaAttendance" value="Aún no lo sabe">
-                                                    <span>No sé</span>
+                                                    <span>Aún no lo sabe</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -172,13 +172,13 @@
 
                                 <div class="form-field form-field-full">
                                     <label for="message">Mensaje para nosotros</label>
-                                    <textarea id="message" name="message" rows="4" placeholder="Lo que te apetezca decirnos"></textarea>
+                                    <textarea id="message" name="message" rows="4" placeholder="Si quieres, déjanos aquí una nota"></textarea>
                                 </div>
 
                                 <div class="form-field form-field-full">
                                     <label class="checkbox-line">
                                         <input id="consent" name="consent" type="checkbox" required>
-                                        <span>Confirmo que estos datos son correctos para organizar mi asistencia.</span>
+                                        <span>Confirmo que estos datos son correctos para organizar mi asistencia y la de mi acompañante.</span>
                                     </label>
                                 </div>
                             </div>
@@ -199,8 +199,8 @@
                     <aside class="rsvp-side-panel">
                         <div id="rsvp-result" class="rsvp-card rsvp-result-card hidden-field" aria-live="polite">
                             <div class="rsvp-kicker">Resumen</div>
-                            <h2 class="rsvp-title">Tu confirmación está lista</h2>
-                            <p class="rsvp-copy">Revisa el resumen de tu respuesta y el estado del guardado.</p>
+                            <h2 class="rsvp-title">Tu confirmación está preparada</h2>
+                            <p class="rsvp-copy">Revisa tu resumen y comprueba el estado del guardado justo debajo.</p>
                             <div id="rsvp-summary" class="rsvp-summary"></div>
                             <div class="rsvp-actions">
                                 <button id="rsvp-copy" type="button" class="rsvp-action-button">
@@ -254,10 +254,10 @@
             if (footerMessage) {
                 const hour = now.getHours();
                 footerMessage.textContent = hour < 12
-                    ? '¡Buenos días! Ya puedes dejarnos tu RSVP.'
+                    ? '¡Buenos días! Ya puedes confirmar tu asistencia.'
                     : hour < 18
                         ? '¡Buenas tardes! Cuéntanos si te veremos en el festival.'
-                        : '¡Buenas noches! Deja tu confirmación cuando quieras.';
+                        : '¡Buenas noches! Puedes dejar tu confirmación cuando quieras.';
             }
 
             const form = document.getElementById('wedding-rsvp-form');
@@ -458,18 +458,18 @@
 
                 submitButton.disabled = true;
                 submitButtonLabel.textContent = 'Guardando...';
-                saveStatus.textContent = 'Guardando tu confirmación en la hoja de invitados...';
+                saveStatus.textContent = 'Estamos guardando tu confirmación en la lista de invitados...';
 
                 try {
                     const payload = buildSheetPayload(formData);
                     await postToGoogleSheet(payload);
 
                     localStorage.setItem('carla-jose-rsvp-draft', JSON.stringify(formData));
-                    saveStatus.textContent = 'Solicitud enviada. Comprueba la hoja de cálculo para confirmar que se ha registrado.';
-                    submitButtonLabel.textContent = 'Solicitud enviada';
+                    saveStatus.textContent = 'Confirmación guardada correctamente en la hoja de cálculo.';
+                    submitButtonLabel.textContent = 'Confirmación guardada';
                 } catch (error) {
                     console.error('No se pudo guardar el RSVP', error);
-                    saveStatus.textContent = 'No se pudo guardar automáticamente. Revisa la configuración del script e inténtalo de nuevo.';
+                    saveStatus.textContent = 'No hemos podido guardar tu confirmación ahora mismo. Vuelve a intentarlo en unos segundos.';
                     submitButtonLabel.textContent = 'Reintentar guardado';
                 } finally {
                     submitButton.disabled = false;
