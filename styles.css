@@ -1289,6 +1289,12 @@ h2 {
     min-width: 260px;
 }
 
+.rsvp-privacy-note {
+    margin-top: 1rem;
+    color: rgba(248, 249, 250, 0.75);
+    font-size: 0.85rem;
+}
+
 .sticky-panel {
     position: sticky;
     top: 110px;
