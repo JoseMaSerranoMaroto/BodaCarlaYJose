@@ -855,6 +855,42 @@ h2 {
     width: 20px;
 }
 
+.dress-code-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    padding: 0.9rem 1.1rem;
+    border-radius: 0.75rem;
+    background: rgba(78, 205, 196, 0.08);
+    border: 1px solid rgba(78, 205, 196, 0.35);
+}
+
+.dress-code-note i {
+    color: #4ecdc4;
+    font-size: 1.2rem;
+    margin-top: 0.15rem;
+}
+
+.dress-code-label {
+    display: block;
+    color: #4ecdc4;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    margin-bottom: 0.25rem;
+}
+
+.dress-code-text {
+    display: block;
+    color: #f8f9fa;
+}
+
+.transport-note {
+    max-width: 800px;
+}
+
 .rsvp-section {
     position: relative;
     background:
@@ -956,6 +992,14 @@ h2 {
     background: rgba(78, 205, 196, 0.12);
     border: 1px solid rgba(78, 205, 196, 0.3);
     color: #4ecdc4;
+}
+
+.rsvp-deadline {
+    position: relative;
+    z-index: 1;
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin: 0.75rem 0 0;
 }
 
 .rsvp-actions {
@@ -1385,6 +1429,23 @@ h2 {
     color: #ff6b6b;
     font-family: 'Bebas Neue', cursive;
     font-size: 1.6rem;
+}
+
+.gift-card {
+    max-width: 700px;
+    text-align: center;
+    align-items: center;
+}
+
+.gift-message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.gift-account-number {
+    color: #4ecdc4;
+    letter-spacing: 0.03em;
 }
 
 .location-map-frame {

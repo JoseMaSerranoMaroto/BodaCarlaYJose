@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda de Carla y Jose</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/entrada.svg">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Boda de Carla y Jose">
+    <meta property="og:description" content="Festival de amor indie: preboda el 19 y boda el 20 de febrero de 2027 en el Rancho de la Aldehuela, Torrecaballeros (Segovia).">
+    <meta property="og:image" content="assets/images/entrada.png">
+    <meta property="og:type" content="website">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -43,6 +50,7 @@
                     <li class="nav-item"><a class="nav-link nav-link-modern" href="#detalles">Detalles</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-modern" href="#ubicacion">Ubicación</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-modern" href="#alojamiento">Alojamiento</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="#regalo">Aporta al cartel</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-modern" href="#galeria">Galería</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-modern" href="#site-footer">Contactos</a></li>
                 </ul>
@@ -103,6 +111,7 @@
                     <div class="rsvp-kicker">Lista de invitados</div>
                     <h2 class="rsvp-title">Confirma tu asistencia</h2>
                     <p class="rsvp-copy">Rellena el formulario para confirmar si vienes, indicar acompañantes y dejarnos los datos importantes para organizar la boda.</p>
+                    <p class="rsvp-deadline"><i class="fas fa-hourglass-half me-2"></i>Fecha límite para confirmar: <strong>31 de diciembre</strong></p>
                     <div class="rsvp-actions">
                         <a class="rsvp-action-button rsvp-action-primary" href="rsvp.html">
                             <i class="fas fa-list-check"></i>
@@ -167,6 +176,13 @@
                                 <span>Bebidas y charlas hasta el amanecer</span>
                             </div>
                         </div>
+                        <div class="dress-code-note">
+                            <i class="fas fa-shirt"></i>
+                            <div>
+                                <span class="dress-code-label">Código de vestimenta</span>
+                                <span class="dress-code-text">Espíritu indie: ropa cómoda, informal y con tu toque más auténtico. Déjate llevar por tu estilo.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -194,6 +210,27 @@
                             <div class="event-item">
                                 <i class="fas fa-music"></i>
                                 <span>Fiesta con DJ y baile</span>
+                            </div>
+                        </div>
+                        <div class="dress-code-note">
+                            <i class="fas fa-shirt"></i>
+                            <div>
+                                <span class="dress-code-label">Código de vestimenta</span>
+                                <span class="dress-code-text">Elegancia invernal: apuesta por looks elegantes, tejidos de invierno y colores profundos. Evitad el blanco, reservado para la novia.</span>
+                            </div>
+                        </div>
+                        <div class="dress-code-note">
+                            <i class="fas fa-champagne-glasses"></i>
+                            <div>
+                                <span class="dress-code-label">Solo adultos</span>
+                                <span class="dress-code-text">Queremos muchísimo a vuestros peques, pero para que todos podáis disfrutar la fiesta al máximo, la boda será una noche solo para adultos. Gracias por entenderlo.</span>
+                            </div>
+                        </div>
+                        <div class="dress-code-note">
+                            <i class="fas fa-cloud-sun-rain"></i>
+                            <div>
+                                <span class="dress-code-label">Plan según el tiempo</span>
+                                <span class="dress-code-text">La boda será al aire libre si el tiempo lo permite. Si el clima no acompaña, tenemos un plan B en interior para que la fiesta no pare.</span>
                             </div>
                         </div>
                     </div>
@@ -234,6 +271,13 @@
         <div class="container">
             <div class="text-center"><span class="section-kicker">Dónde dormir</span></div>
             <h2 class="text-center mb-5"><i class="fas fa-bed me-3"></i>Alojamiento<i class="fas fa-bed ms-3"></i></h2>
+            <div class="dress-code-note transport-note mx-auto mb-5">
+                <i class="fas fa-campground"></i>
+                <div>
+                    <span class="dress-code-label">Sin salir del festival</span>
+                    <span class="dress-code-text">El Hotel El Rancho y la Posada del Rancho están dentro del propio recinto: podéis bailar hasta el final y llegar a la cama sin dar ni un paso fuera del festival. Además, hay un pequeño aparcamiento en la puerta del recinto para quien venga en coche.</span>
+                </div>
+            </div>
 
             <div class="accommodation-grid">
                 <div class="accommodation-card">
@@ -283,6 +327,24 @@
                             <span>Ver hoteles en Segovia</span>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regalo -->
+    <section id="regalo" class="py-5">
+        <div class="container">
+            <div class="text-center"><span class="section-kicker">Sin protocolos</span></div>
+            <h2 class="text-center mb-5"><i class="fas fa-gift me-3"></i>Aporta al cartel<i class="fas fa-gift ms-3"></i></h2>
+            <div class="location-card location-card-main gift-card mx-auto">
+                <p class="gift-message">El mejor regalo es que bailéis con nosotros hasta que se acabe la música. Pero si os apetece darnos un empujón extra para nuestra próxima aventura (la luna de miel), lo recibiremos encantados.</p>
+                <button class="rsvp-action-button rsvp-action-primary gift-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#gift-account" aria-expanded="false" aria-controls="gift-account">
+                    <i class="fas fa-piggy-bank"></i>
+                    <span>Pasamos la gorra</span>
+                </button>
+                <div class="collapse mt-3" id="gift-account">
+                    <p class="gift-account-number">IBAN: <strong>Pendiente de añadir</strong></p>
                 </div>
             </div>
         </div>
