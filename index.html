@@ -54,7 +54,7 @@
     <div id="entrada-screen" class="entrada-screen">
         <div class="entrada-card text-center">
             <div id="entrada-image-wrapper" class="entrada-image-wrapper mx-auto" role="button" tabindex="0">
-                <img src="assets/images/entrada.png" alt="Entrada al festival" class="entrada-img">
+                <img src="assets/images/entrada.svg" alt="Entrada al festival" class="entrada-img">
             </div>
             <p class="entrada-note mt-3">Si has recibido esta entrada... ya estas en la lista VIP.<br>Tocala y entra al festival de Carla y Jose.</p>
         </div>
@@ -68,7 +68,11 @@
                 <img src="assets/images/vinilo.png" alt="Carla y Jose" class="vinyl-img">
             </div>
             <p class="hero-subtitle">Festival de amor indie</p>
-            <p class="lead">Únete a nuestra celebración: preboda el 5 y boda el 6 de febrero de 2027</p>
+            <p class="lead">Únete a nuestra celebración: preboda el 19 y boda el 20 de febrero de 2027</p>
+            <a href="#confirmar-asistencia" class="hero-cta-button mb-4">
+                <i class="fas fa-list-check"></i>
+                <span>Confirmar asistencia</span>
+            </a>
             <div id="countdown" class="mb-4 countdown-grid">
                 <div>
                     <span id="days" class="display-4">0</span>
@@ -108,11 +112,19 @@
                 <div id="guardar-calendario" class="rsvp-card rsvp-card-calendar">
                     <div class="rsvp-kicker">Reserva la fecha</div>
                     <h2 class="rsvp-title">Guárdalo en tu calendario</h2>
-                    <p class="rsvp-copy">Añade de una vez la preboda del viernes y la boda del sábado para no perderte nada del festival.</p>
+                    <p class="rsvp-copy">Añade cada evento a Google Calendar o descarga ambos juntos para Apple Calendar y otras aplicaciones.</p>
                     <div class="rsvp-actions">
-                        <button id="calendar-download" type="button" class="rsvp-action-button rsvp-action-primary calendar-download-button">
+                        <a id="calendar-preboda-link" class="rsvp-action-button rsvp-action-primary calendar-provider-button" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-calendar-plus"></i>
-                            <span>Añadir a tu calendario</span>
+                            <span>Añadir preboda a Google Calendar</span>
+                        </a>
+                        <a id="calendar-wedding-link" class="rsvp-action-button rsvp-action-primary calendar-provider-button" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Añadir boda a Google Calendar</span>
+                        </a>
+                        <button id="calendar-download" type="button" class="rsvp-action-button calendar-download-button">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Apple y otros calendarios (.ics)</span>
                         </button>
                     </div>
                 </div>
@@ -123,6 +135,7 @@
     <!-- Detalles de la Boda -->
     <section id="detalles" class="py-5">
         <div class="container">
+            <div class="text-center"><span class="section-kicker">Programa del festival</span></div>
             <h2 class="text-center mb-5"><i class="fas fa-calendar-alt me-3"></i>Detalles del Festival<i class="fas fa-calendar-alt ms-3"></i></h2>
 
             <!-- Timeline -->
@@ -133,7 +146,7 @@
                         <i class="fas fa-compact-disc"></i>
                     </div>
                     <div class="timeline-content">
-                        <h4 class="timeline-title">Viernes 5 de Febrero - Preboda</h4>
+                        <h4 class="timeline-title">Viernes 19 de Febrero - Preboda</h4>
                         <p class="timeline-subtitle">¡Abre el telón con buena vibra!</p>
                         <div class="event-details">
                             <div class="event-item">
@@ -162,7 +175,7 @@
                         <i class="fas fa-guitar"></i>
                     </div>
                     <div class="timeline-content">
-                        <h4 class="timeline-title">Sábado 6 de Febrero - La Gran Noche</h4>
+                        <h4 class="timeline-title">Sábado 20 de Febrero - La Gran Noche</h4>
                         <p class="timeline-subtitle">¡El show principal!</p>
                         <div class="event-details">
                             <div class="event-item">
@@ -188,6 +201,7 @@
 
             <!-- Ubicación -->
             <div id="ubicacion" class="location-section mt-5">
+                <div class="text-center"><span class="section-kicker">Cómo llegar</span></div>
                 <h3 class="text-center mb-4"><span class="location-title-icon"><i class="fas fa-location-dot"></i></span>Ubicación</h3>
                 <div class="location-showcase">
                     <div class="location-card location-card-main">
@@ -196,7 +210,7 @@
                         <p class="location-place">Torrecaballeros, Segovia, España</p>
                         <p>Un entorno natural, abierto y con carácter para celebrar la preboda y la gran noche con estética de festival indie.</p>
                         <div class="location-actions">
-                            <a class="location-link" href="https://www.google.com/maps/search/?api=1&query=Rancho+de+la+Aldehuela+Torrecaballeros+Segovia" target="_blank" rel="noopener noreferrer">
+                            <a class="rsvp-action-button rsvp-action-primary" href="https://www.google.com/maps/search/?api=1&query=Rancho+de+la+Aldehuela+Torrecaballeros+Segovia" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-route"></i>
                                 <span>Abrir en Google Maps</span>
                             </a>
@@ -217,6 +231,7 @@
     <!-- Galería -->
     <section id="galeria" class="py-5 gallery-section">
         <div class="container">
+            <div class="text-center"><span class="section-kicker">Instantáneas</span></div>
             <h2 class="text-center mb-4">Galería</h2>
             <div id="weddingCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
                 <div class="carousel-indicators mb-4">
@@ -314,7 +329,10 @@
     <script>
         // Navbar active link on scroll
         document.addEventListener('DOMContentLoaded', function() {
-            document.body.style.overflow = 'hidden';
+            const yaVioEntrada = sessionStorage.getItem('entradaVista') === '1';
+            if (!yaVioEntrada) {
+                document.body.style.overflow = 'hidden';
+            }
             const navLinks = document.querySelectorAll('.nav-link-modern');
             const sections = document.querySelectorAll('section');
 
@@ -347,7 +365,7 @@
                 });
             });
 
-            const weddingDate = new Date('2027-02-06T00:00:00').getTime();
+            const weddingDate = new Date('2027-02-20T00:00:00').getTime();
 
             function updateCountdown() {
                 const now = new Date().getTime();
@@ -372,8 +390,11 @@
             const entradaScreen = document.getElementById('entrada-screen');
             const entradaWrapper = document.getElementById('entrada-image-wrapper');
 
-            if (entradaWrapper) {
+            if (entradaScreen && yaVioEntrada) {
+                entradaScreen.classList.add('hide');
+            } else if (entradaWrapper) {
                 const hideEntrada = () => {
+                    sessionStorage.setItem('entradaVista', '1');
                     entradaScreen.classList.add('fade-out');
                     document.body.style.overflow = '';
                     setTimeout(() => {
@@ -412,10 +433,12 @@
 
             const rsvpDateChip = document.getElementById('rsvp-date-chip');
             const calendarDownload = document.getElementById('calendar-download');
-            const prebodaStart = new Date('2027-02-05T19:00:00+01:00');
-            const prebodaEnd = new Date('2027-02-06T01:00:00+01:00');
-            const bodaStart = new Date('2027-02-06T17:00:00+01:00');
-            const bodaEnd = new Date('2027-02-07T01:30:00+01:00');
+            const prebodaCalendarLink = document.getElementById('calendar-preboda-link');
+            const weddingCalendarLink = document.getElementById('calendar-wedding-link');
+            const prebodaStart = new Date('2027-02-19T19:00:00+01:00');
+            const prebodaEnd = new Date('2027-02-20T01:00:00+01:00');
+            const bodaStart = new Date('2027-02-20T17:00:00+01:00');
+            const bodaEnd = new Date('2027-02-21T01:30:00+01:00');
             const formattedShortDate = new Intl.DateTimeFormat('es-ES', {
                 day: 'numeric',
                 month: 'long',
@@ -427,6 +450,44 @@
             }
 
             const formatIcsDate = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+            const formatGoogleCalendarDate = (date) => new Intl.DateTimeFormat('sv-SE', {
+                timeZone: 'Europe/Madrid',
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hourCycle: 'h23'
+            }).format(date).replace(/[-:]/g, '').replace(' ', 'T');
+            const buildGoogleCalendarUrl = (title, start, end, description) => {
+                const params = new URLSearchParams({
+                    action: 'TEMPLATE',
+                    text: title,
+                    dates: `${formatGoogleCalendarDate(start)}/${formatGoogleCalendarDate(end)}`,
+                    ctz: 'Europe/Madrid',
+                    details: description,
+                    location: 'Rancho de la Aldehuela, Torrecaballeros, Segovia'
+                });
+                return `https://calendar.google.com/calendar/render?${params.toString()}`;
+            };
+
+            if (prebodaCalendarLink) {
+                prebodaCalendarLink.href = buildGoogleCalendarUrl(
+                    'Preboda Carla & Jose',
+                    prebodaStart,
+                    prebodaEnd,
+                    'Música, bienvenida y cena para abrir el fin de semana.'
+                );
+            }
+            if (weddingCalendarLink) {
+                weddingCalendarLink.href = buildGoogleCalendarUrl(
+                    'Boda Carla & Jose',
+                    bodaStart,
+                    bodaEnd,
+                    'Ceremonia y celebración de Carla & Jose.'
+                );
+            }
 
             if (calendarDownload) {
                 calendarDownload.addEventListener('click', () => {
@@ -449,7 +510,7 @@
                         `DTSTART:${formatIcsDate(bodaStart)}`,
                         `DTEND:${formatIcsDate(bodaEnd)}`,
                         'SUMMARY:Boda Carla & Jose',
-                        'DESCRIPTION:Ceremonia y celebración de Carla & Jose. Preboda el 5 de febrero y gran noche el 6 de febrero.',
+                        'DESCRIPTION:Ceremonia y celebración de Carla & Jose. Preboda el 19 de febrero y gran noche el 20 de febrero.',
                         'LOCATION:Rancho de la Aldehuela, Torrecaballeros, Segovia',
                         'END:VEVENT',
                         'END:VCALENDAR'

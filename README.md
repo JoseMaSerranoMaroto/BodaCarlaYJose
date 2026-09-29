@@ -5,7 +5,7 @@ Web informativa para la boda de Carla y Jose, diseñada con una estetica de fest
 ## Que incluye
 
 - Pantalla de entrada con ticket interactivo
-- Hero principal con cuenta atras para el 6 de febrero de 2027
+- Hero principal con cuenta atras para el 20 de febrero de 2027
 - Seccion de detalles del evento y cronograma
 - Galeria de imagenes
 - Pie de pagina moderno con contacto integrado
@@ -37,7 +37,7 @@ Despues abre `http://localhost:8000`.
 
 ## Personalizacion rapida
 
-- Imagen de entrada: `assets/images/entrada.png`
+- Imagen de entrada: `assets/images/entrada.svg`
 - Fondo principal: `assets/images/fondoVertical.png`
 - Vinilo: `assets/images/vinilo.png`
 - Estilos: `styles.css`
