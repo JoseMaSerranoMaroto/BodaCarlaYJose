@@ -1361,6 +1361,32 @@ h2 {
     margin-top: 1.25rem;
 }
 
+.accommodation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.accommodation-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.75rem;
+    background: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(38, 38, 38, 0.92));
+    border: 1px solid rgba(78, 205, 196, 0.42);
+    border-radius: 1.5rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    color: #f8f9fa;
+}
+
+.accommodation-card h5 {
+    color: #ff6b6b;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.6rem;
+}
+
 .location-map-frame {
     position: relative;
     display: block;
@@ -1461,6 +1487,10 @@ h2 {
     }
 
     .location-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .accommodation-grid {
         grid-template-columns: 1fr;
     }
 
