@@ -37,7 +37,7 @@
                         <span class="rsvp-status-pill">Preboda: viernes 19 de febrero</span>
                         <span class="rsvp-date-chip">Boda: sábado 20 de febrero de 2027</span>
                     </div>
-                    <p class="rsvp-deadline"><i class="fas fa-hourglass-half me-2"></i>Fecha límite para confirmar: <strong>31 de diciembre</strong></p>
+                    <p class="rsvp-deadline"><i class="fas fa-hourglass-half me-2"></i>Fecha límite para confirmar: <strong>31 de diciembre de 2026</strong></p>
                 </div>
             </div>
         </section>
@@ -95,25 +95,46 @@
                                 </div>
 
                                 <div class="form-field attendance-conditional">
-                                    <label for="menuType">Tipo de menú</label>
+                                    <label for="menuType">Preferencia de menú</label>
                                     <select id="menuType" name="menuType">
                                         <option value="Sin preferencias especiales">Sin preferencias especiales</option>
                                         <option value="Vegetariano">Vegetariano</option>
                                         <option value="Vegano">Vegano</option>
-                                        <option value="Sin gluten">Sin gluten</option>
-                                        <option value="Sin lactosa">Sin lactosa</option>
-                                        <option value="Otro">Otro</option>
                                     </select>
                                 </div>
 
-                                <div class="form-field attendance-conditional hidden-field" id="custom-menu-wrapper">
-                                    <label for="customMenu">Cuéntanos cuál es</label>
-                                    <input id="customMenu" name="customMenu" type="text" placeholder="Describe tu necesidad de menú">
+                                <div id="main-course-field" class="form-field form-field-full attendance-conditional">
+                                    <label>Plato principal</label>
+                                    <div class="choice-grid" data-choice-group="mainCourse">
+                                        <label class="choice-pill">
+                                            <input type="radio" name="mainCourse" value="Cochinillo al horno de leña">
+                                            <span>Cochinillo al horno de leña</span>
+                                        </label>
+                                        <label class="choice-pill">
+                                            <input type="radio" name="mainCourse" value="Cordero al horno de leña">
+                                            <span>Cordero al horno de leña</span>
+                                        </label>
+                                        <label class="choice-pill">
+                                            <input type="radio" name="mainCourse" value="Pescado">
+                                            <span>Pescado</span>
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <div class="form-field form-field-full attendance-conditional">
-                                    <label for="allergies">Alergias o intolerancias</label>
-                                    <textarea id="allergies" name="allergies" rows="3" placeholder="Si no tienes, puedes dejarlo vacío"></textarea>
+                                    <label>Alergias e intolerancias</label>
+                                    <div class="choice-grid dietary-options">
+                                        <label class="choice-pill">
+                                            <input type="checkbox" name="allergyOptions" value="Sin gluten">
+                                            <span>Sin gluten</span>
+                                        </label>
+                                        <label class="choice-pill">
+                                            <input type="checkbox" name="allergyOptions" value="Sin lactosa">
+                                            <span>Sin lactosa</span>
+                                        </label>
+                                    </div>
+                                    <label class="dietary-details-label" for="allergies">Otras alergias, intolerancias o detalles</label>
+                                    <textarea id="allergies" name="allergies" rows="2" placeholder="Déjalo vacío si no tienes ninguna más"></textarea>
                                 </div>
 
                                 <div class="form-field form-field-full attendance-conditional">
@@ -124,7 +145,7 @@
                                             <span>Sí</span>
                                         </label>
                                         <label class="choice-pill">
-                                            <input type="radio" name="hasCompanion" value="No" checked>
+                                            <input type="radio" name="hasCompanion" value="No">
                                             <span>No</span>
                                         </label>
                                     </div>
@@ -154,19 +175,44 @@
                                             </div>
                                         </div>
                                         <div class="form-field">
-                                            <label for="companionMenu">Tipo de menú del acompañante</label>
+                                            <label for="companionMenu">Preferencia de menú del acompañante</label>
                                             <select id="companionMenu" name="companionMenu">
                                                 <option value="Sin preferencias especiales">Sin preferencias especiales</option>
                                                 <option value="Vegetariano">Vegetariano</option>
                                                 <option value="Vegano">Vegano</option>
-                                                <option value="Sin gluten">Sin gluten</option>
-                                                <option value="Sin lactosa">Sin lactosa</option>
-                                                <option value="Otro">Otro</option>
                                             </select>
                                         </div>
+                                        <div id="companion-main-course-field" class="form-field form-field-full">
+                                            <label>Plato principal del acompañante</label>
+                                            <div class="choice-grid" data-choice-group="companionMainCourse">
+                                                <label class="choice-pill">
+                                                    <input type="radio" name="companionMainCourse" value="Cochinillo al horno de leña">
+                                                    <span>Cochinillo al horno de leña</span>
+                                                </label>
+                                                <label class="choice-pill">
+                                                    <input type="radio" name="companionMainCourse" value="Cordero al horno de leña">
+                                                    <span>Cordero al horno de leña</span>
+                                                </label>
+                                                <label class="choice-pill">
+                                                    <input type="radio" name="companionMainCourse" value="Pescado">
+                                                    <span>Pescado</span>
+                                                </label>
+                                            </div>
+                                        </div>
                                         <div class="form-field form-field-full">
-                                            <label for="companionAllergies">Alergias o intolerancias del acompañante</label>
-                                            <textarea id="companionAllergies" name="companionAllergies" rows="3" placeholder="Si no tiene, puedes dejarlo vacío"></textarea>
+                                            <label>Alergias e intolerancias del acompañante</label>
+                                            <div class="choice-grid dietary-options">
+                                                <label class="choice-pill">
+                                                    <input type="checkbox" name="companionAllergyOptions" value="Sin gluten">
+                                                    <span>Sin gluten</span>
+                                                </label>
+                                                <label class="choice-pill">
+                                                    <input type="checkbox" name="companionAllergyOptions" value="Sin lactosa">
+                                                    <span>Sin lactosa</span>
+                                                </label>
+                                            </div>
+                                            <label class="dietary-details-label" for="companionAllergies">Otras alergias, intolerancias o detalles</label>
+                                            <textarea id="companionAllergies" name="companionAllergies" rows="2" placeholder="Déjalo vacío si no tiene ninguna más"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -187,22 +233,22 @@
                             <div class="rsvp-form-actions">
                                 <button type="submit" class="rsvp-action-button rsvp-action-primary rsvp-submit-button">
                                     <i class="fas fa-sparkles"></i>
-                                    <span>Guardar confirmación</span>
+                                    <span>Enviar confirmación</span>
                                 </button>
                                 <a class="rsvp-action-button" href="index.html#asistencia">
                                     <i class="fas fa-arrow-left"></i>
                                     <span>Volver a la web</span>
                                 </a>
                             </div>
-                            <p class="rsvp-privacy-note"><i class="fas fa-lock me-2"></i>Tus datos solo se usarán para organizar la boda y no se compartirán con terceros.</p>
+                            <p class="rsvp-privacy-note"><i class="fas fa-lock me-2"></i>Usaremos estos datos únicamente para organizar la boda y gestionar vuestra asistencia.</p>
                         </form>
                     </div>
 
                     <aside class="rsvp-side-panel">
                         <div id="rsvp-result" class="rsvp-card rsvp-result-card hidden-field" aria-live="polite">
                             <div class="rsvp-kicker">Resumen</div>
-                            <h2 class="rsvp-title">Tu confirmación está preparada</h2>
-                            <p class="rsvp-copy">Revisa tu resumen y comprueba el estado del guardado justo debajo.</p>
+                            <h2 class="rsvp-title">Resumen de tu respuesta</h2>
+                            <p class="rsvp-copy">Comprueba los datos de tu respuesta y consulta aquí el estado del envío.</p>
                             <div id="rsvp-summary" class="rsvp-summary"></div>
                             <div class="rsvp-actions">
                                 <button id="rsvp-copy" type="button" class="rsvp-action-button">
@@ -267,10 +313,15 @@
             const prebodaInputs = document.querySelectorAll('input[name="prebodaAttendance"]');
             const companionInputs = document.querySelectorAll('input[name="hasCompanion"]');
             const companionPrebodaInputs = document.querySelectorAll('input[name="companionPrebodaAttendance"]');
+            const mainCourseInputs = document.querySelectorAll('input[name="mainCourse"]');
+            const companionMainCourseInputs = document.querySelectorAll('input[name="companionMainCourse"]');
+            const allergyOptionInputs = document.querySelectorAll('input[name="allergyOptions"]');
+            const companionAllergyOptionInputs = document.querySelectorAll('input[name="companionAllergyOptions"]');
             const companionDetails = document.getElementById('companion-details');
-            const noCompanionInput = [...companionInputs].find((input) => input.value === 'No');
+            const mainCourseField = document.getElementById('main-course-field');
+            const companionMainCourseField = document.getElementById('companion-main-course-field');
             const menuType = document.getElementById('menuType');
-            const customMenuWrapper = document.getElementById('custom-menu-wrapper');
+            const companionMenu = document.getElementById('companionMenu');
             const resultCard = document.getElementById('rsvp-result');
             const summaryBox = document.getElementById('rsvp-summary');
             const saveStatus = document.getElementById('rsvp-save-status');
@@ -278,18 +329,52 @@
             const conditionalFields = document.querySelectorAll('.attendance-conditional');
             const submitButton = form.querySelector('button[type="submit"]');
             const submitButtonLabel = submitButton.querySelector('span');
+            const setGroupRequired = (inputs, required) => {
+                if (inputs.length) {
+                    inputs[0].required = required;
+                }
+            };
+
+            const toggleMainCourseField = () => {
+                const isAttending = document.querySelector('input[name="attendance"]:checked')?.value === 'Sí';
+                const showMainCourse = isAttending && menuType.value === 'Sin preferencias especiales';
+                mainCourseField.classList.toggle('hidden-field', !showMainCourse);
+                setGroupRequired(mainCourseInputs, showMainCourse);
+                if (!showMainCourse) {
+                    mainCourseInputs.forEach((input) => {
+                        input.checked = false;
+                    });
+                }
+            };
+
+            const toggleCompanionMainCourseField = () => {
+                const isAttendingWithCompanion = document.querySelector('input[name="attendance"]:checked')?.value === 'Sí'
+                    && document.querySelector('input[name="hasCompanion"]:checked')?.value === 'Sí';
+                const showMainCourse = isAttendingWithCompanion && companionMenu.value === 'Sin preferencias especiales';
+                companionMainCourseField.classList.toggle('hidden-field', !showMainCourse);
+                setGroupRequired(companionMainCourseInputs, showMainCourse);
+                if (!showMainCourse) {
+                    companionMainCourseInputs.forEach((input) => {
+                        input.checked = false;
+                    });
+                }
+            };
 
             const toggleAttendanceFields = () => {
                 const selected = document.querySelector('input[name="attendance"]:checked');
                 const isAttending = selected && selected.value === 'Sí';
+                setGroupRequired(prebodaInputs, Boolean(isAttending));
+                setGroupRequired(companionInputs, Boolean(isAttending));
                 conditionalFields.forEach((field) => {
                     if (field === companionDetails) {
                         return;
                     }
                     field.classList.toggle('hidden-field', !isAttending);
                 });
+                toggleMainCourseField();
                 if (!isAttending) {
                     companionDetails.classList.add('hidden-field');
+                    toggleCompanionFields();
                     return;
                 }
                 toggleCompanionFields();
@@ -297,16 +382,26 @@
 
             const toggleCompanionFields = () => {
                 const selected = document.querySelector('input[name="hasCompanion"]:checked');
-                const hasCompanion = selected && selected.value === 'Sí';
+                const isAttending = document.querySelector('input[name="attendance"]:checked')?.value === 'Sí';
+                const hasCompanion = isAttending && selected && selected.value === 'Sí';
                 companionDetails.classList.toggle('hidden-field', !hasCompanion);
+                setGroupRequired(companionPrebodaInputs, Boolean(hasCompanion));
+                document.getElementById('companionName').required = Boolean(hasCompanion);
                 if (!hasCompanion) {
                     document.getElementById('companionName').value = '';
                     companionPrebodaInputs.forEach((input) => {
                         input.checked = false;
                     });
+                    companionMainCourseInputs.forEach((input) => {
+                        input.checked = false;
+                    });
+                    companionAllergyOptionInputs.forEach((input) => {
+                        input.checked = false;
+                    });
                     document.getElementById('companionMenu').value = 'Sin preferencias especiales';
                     document.getElementById('companionAllergies').value = '';
                 }
+                toggleCompanionMainCourseField();
             };
 
             attendanceInputs.forEach((input) => {
@@ -317,14 +412,29 @@
                 input.addEventListener('change', toggleCompanionFields);
             });
 
-            menuType.addEventListener('change', (event) => {
-                const showCustom = event.target.value === 'Otro';
-                customMenuWrapper.classList.toggle('hidden-field', !showCustom);
-                const customMenuInput = document.getElementById('customMenu');
-                if (!showCustom && customMenuInput) {
-                    customMenuInput.value = '';
+            menuType.addEventListener('change', toggleMainCourseField);
+            companionMenu.addEventListener('change', toggleCompanionMainCourseField);
+
+            const getSelectedOptions = (inputs) => [...inputs]
+                .filter((input) => input.checked)
+                .map((input) => input.value);
+
+            const formatAllergies = (options, details) => [
+                options.join(', '),
+                details.trim()
+            ].filter(Boolean).join('. ');
+
+            const formatMainCourseSummary = (isApplicable, menu, course) => {
+                if (!isApplicable) {
+                    return 'No aplica';
                 }
-            });
+                if (course) {
+                    return course;
+                }
+                return ['Vegetariano', 'Vegano'].includes(menu)
+                    ? `No aplica (menú ${menu.toLowerCase()})`
+                    : 'Sin indicar';
+            };
 
             const formatSummary = (data) => {
                 return [
@@ -332,9 +442,11 @@
                     `Email: ${data.email || 'No indicado'}`,
                     `Asistencia: ${data.attendance}`,
                     `Preboda: ${data.prebodaAttendance || 'Sin responder'}`,
+                    `Plato principal: ${formatMainCourseSummary(data.attendance === 'Sí', data.menu, data.mainCourse)}`,
                     `Acompañante: ${data.hasCompanion}`,
                     `Nombre acompañante: ${data.companionName || 'No aplica'}`,
                     `Preboda acompañante: ${data.companionPrebodaAttendance || 'No aplica'}`,
+                    `Plato principal acompañante: ${formatMainCourseSummary(data.hasCompanion === 'Sí', data.companionMenu, data.companionMainCourse)}`,
                     `Menú: ${data.menu}`,
                     `Alergias: ${data.allergies || 'Sin observaciones'}`,
                     `Menú acompañante: ${data.companionMenu || 'No aplica'}`,
@@ -344,16 +456,41 @@
             };
 
             const renderSummary = (data) => {
-                summaryBox.innerHTML = `
-                    <div class="rsvp-summary-item"><span>Nombre</span><strong>${data.fullName}</strong></div>
-                    <div class="rsvp-summary-item"><span>Asistencia</span><strong>${data.attendance}</strong></div>
-                    <div class="rsvp-summary-item"><span>Preboda</span><strong>${data.prebodaAttendance || 'Sin responder'}</strong></div>
-                    <div class="rsvp-summary-item"><span>Email</span><strong>${data.email || 'No indicado'}</strong></div>
-                    <div class="rsvp-summary-item"><span>Acompañante</span><strong>${data.hasCompanion}</strong></div>
-                    <div class="rsvp-summary-item"><span>Preboda acompañante</span><strong>${data.companionPrebodaAttendance || 'No aplica'}</strong></div>
-                    <div class="rsvp-summary-item"><span>Menú</span><strong>${data.menu}</strong></div>
-                    <div class="rsvp-summary-item"><span>Alergias</span><strong>${data.allergies || 'Sin observaciones'}</strong></div>
-                `;
+                const summaryItems = [
+                    ['Nombre', data.fullName],
+                    ['Asistencia', data.attendance],
+                    ['Preboda', data.prebodaAttendance || 'Sin responder'],
+                    ['Plato principal', formatMainCourseSummary(data.attendance === 'Sí', data.menu, data.mainCourse)],
+                    ['Email', data.email || 'No indicado'],
+                    ['Menú', data.menu],
+                    ['Alergias e intolerancias', data.allergies || 'Sin observaciones'],
+                    ['Acompañante', data.hasCompanion]
+                ];
+
+                if (data.hasCompanion === 'Sí') {
+                    summaryItems.push(
+                        ['Nombre del acompañante', data.companionName || 'Sin indicar'],
+                        ['Preboda del acompañante', data.companionPrebodaAttendance || 'Sin responder'],
+                        ['Plato principal del acompañante', formatMainCourseSummary(true, data.companionMenu, data.companionMainCourse)],
+                        ['Menú del acompañante', data.companionMenu || 'Sin preferencias especiales'],
+                        ['Alergias e intolerancias del acompañante', data.companionAllergies || 'Sin observaciones']
+                    );
+                }
+
+                if (data.message) {
+                    summaryItems.push(['Mensaje', data.message]);
+                }
+
+                summaryBox.replaceChildren(...summaryItems.map(([label, value]) => {
+                    const item = document.createElement('div');
+                    const itemLabel = document.createElement('span');
+                    const itemValue = document.createElement('strong');
+                    item.className = 'rsvp-summary-item';
+                    itemLabel.textContent = label;
+                    itemValue.textContent = value;
+                    item.append(itemLabel, itemValue);
+                    return item;
+                }));
             };
 
             const buildSheetPayload = (data) => {
@@ -362,11 +499,13 @@
                     email: data.email,
                     asistencia: data.attendance,
                     asistenciaPreboda: data.prebodaAttendance,
+                    platoPrincipal: data.mainCourse,
                     menu: data.menu,
                     alergias: data.allergies,
                     vieneConAcompanante: data.hasCompanion,
                     nombreAcompanante: data.companionName,
                     asistenciaPrebodaAcompanante: data.companionPrebodaAttendance,
+                    platoPrincipalAcompanante: data.companionMainCourse,
                     menuAcompanante: data.companionMenu,
                     alergiasAcompanante: data.companionAllergies,
                     mensaje: data.message
@@ -430,26 +569,47 @@
                 }
 
                 const attendance = document.querySelector('input[name="attendance"]:checked')?.value || 'Sin responder';
-                const prebodaAttendance = document.querySelector('input[name="prebodaAttendance"]:checked')?.value || 'Sin responder';
+                const isAttending = attendance === 'Sí';
+                const prebodaAttendance = isAttending
+                    ? document.querySelector('input[name="prebodaAttendance"]:checked')?.value || ''
+                    : '';
                 const hasCompanion = document.querySelector('input[name="hasCompanion"]:checked')?.value || 'No';
-                const companionPrebodaAttendance = document.querySelector('input[name="companionPrebodaAttendance"]:checked')?.value || '';
-                const customMenu = document.getElementById('customMenu');
-                const menuLabel = menuType.value === 'Otro' && customMenu && customMenu.value.trim()
-                    ? customMenu.value.trim()
-                    : menuType.value;
+                const companionPrebodaAttendance = hasCompanion === 'Sí'
+                    ? document.querySelector('input[name="companionPrebodaAttendance"]:checked')?.value || ''
+                    : '';
+                const mainCourse = isAttending && menuType.value === 'Sin preferencias especiales'
+                    ? document.querySelector('input[name="mainCourse"]:checked')?.value || ''
+                    : '';
+                const companionMainCourse = hasCompanion === 'Sí' && companionMenu.value === 'Sin preferencias especiales'
+                    ? document.querySelector('input[name="companionMainCourse"]:checked')?.value || ''
+                    : '';
+                const allergyOptions = getSelectedOptions(allergyOptionInputs);
+                const allergiesDetails = document.getElementById('allergies').value.trim();
+                const companionAllergyOptions = hasCompanion === 'Sí'
+                    ? getSelectedOptions(companionAllergyOptionInputs)
+                    : [];
+                const companionAllergiesDetails = hasCompanion === 'Sí'
+                    ? document.getElementById('companionAllergies').value.trim()
+                    : '';
 
                 const formData = {
                     fullName: document.getElementById('fullName').value.trim(),
                     email: document.getElementById('email').value.trim(),
                     attendance,
                     prebodaAttendance,
+                    mainCourse,
                     hasCompanion,
                     companionName: document.getElementById('companionName').value.trim(),
                     companionPrebodaAttendance: hasCompanion === 'Sí' ? companionPrebodaAttendance : '',
-                    menu: menuLabel,
-                    allergies: document.getElementById('allergies').value.trim(),
+                    companionMainCourse,
+                    menu: menuType.value,
+                    allergyOptions,
+                    allergiesDetails,
+                    allergies: formatAllergies(allergyOptions, allergiesDetails),
                     companionMenu: document.getElementById('companionMenu').value,
-                    companionAllergies: document.getElementById('companionAllergies').value.trim(),
+                    companionAllergyOptions,
+                    companionAllergiesDetails,
+                    companionAllergies: formatAllergies(companionAllergyOptions, companionAllergiesDetails),
                     message: document.getElementById('message').value.trim()
                 };
 
@@ -459,20 +619,20 @@
                 resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
                 submitButton.disabled = true;
-                submitButtonLabel.textContent = 'Guardando...';
-                saveStatus.textContent = 'Estamos guardando tu confirmación en la lista de invitados...';
+                submitButtonLabel.textContent = 'Enviando...';
+                saveStatus.textContent = 'Estamos enviando tu respuesta...';
 
                 try {
                     const payload = buildSheetPayload(formData);
                     await postToGoogleSheet(payload);
 
                     localStorage.setItem('carla-jose-rsvp-draft', JSON.stringify(formData));
-                    saveStatus.textContent = 'Confirmación guardada correctamente en la hoja de cálculo.';
-                    submitButtonLabel.textContent = 'Confirmación guardada';
+                    saveStatus.textContent = 'Hemos enviado tu respuesta. ¡Gracias por confirmar!';
+                    submitButtonLabel.textContent = 'Enviado';
                 } catch (error) {
                     console.error('No se pudo guardar el RSVP', error);
-                    saveStatus.textContent = 'No hemos podido guardar tu confirmación ahora mismo. Vuelve a intentarlo en unos segundos.';
-                    submitButtonLabel.textContent = 'Reintentar guardado';
+                    saveStatus.textContent = 'No hemos podido enviar tu respuesta ahora mismo. Vuelve a intentarlo en unos segundos.';
+                    submitButtonLabel.textContent = 'Reintentar envío';
                 } finally {
                     submitButton.disabled = false;
                 }
@@ -495,23 +655,24 @@
             });
 
             const savedDraft = localStorage.getItem('carla-jose-rsvp-draft');
-            if (noCompanionInput) {
-                noCompanionInput.checked = true;
-            }
             if (savedDraft) {
                 try {
                     const data = JSON.parse(savedDraft);
                     document.getElementById('fullName').value = data.fullName || '';
                     document.getElementById('email').value = data.email || '';
-                    document.getElementById('allergies').value = data.allergies || '';
+                    const validMenus = ['Sin preferencias especiales', 'Vegetariano', 'Vegano'];
+                    const previousMenu = data.menu || 'Sin preferencias especiales';
+                    menuType.value = validMenus.includes(previousMenu) ? previousMenu : 'Sin preferencias especiales';
+                    const legacyAllergyOptions = ['Sin gluten', 'Sin lactosa'].includes(previousMenu) ? [previousMenu] : [];
+                    const savedAllergyOptions = Array.isArray(data.allergyOptions) ? data.allergyOptions : legacyAllergyOptions;
+                    allergyOptionInputs.forEach((input) => {
+                        input.checked = savedAllergyOptions.includes(input.value);
+                    });
+                    const legacyMenuDetails = !validMenus.includes(previousMenu) && !legacyAllergyOptions.length && previousMenu !== 'Otro'
+                        ? previousMenu
+                        : '';
+                    document.getElementById('allergies').value = data.allergiesDetails || [legacyMenuDetails, data.allergies].filter(Boolean).join('. ');
                     document.getElementById('message').value = data.message || '';
-                    menuType.value = ['Sin preferencias especiales', 'Vegetariano', 'Vegano', 'Sin gluten', 'Sin lactosa'].includes(data.menu)
-                        ? data.menu
-                        : 'Otro';
-                    if (menuType.value === 'Otro' && data.menu) {
-                        customMenuWrapper.classList.remove('hidden-field');
-                        document.getElementById('customMenu').value = data.menu;
-                    }
                     const attendanceInput = [...attendanceInputs].find((input) => input.value === data.attendance);
                     if (attendanceInput) {
                         attendanceInput.checked = true;
@@ -519,6 +680,10 @@
                     const prebodaInput = [...prebodaInputs].find((input) => input.value === data.prebodaAttendance);
                     if (prebodaInput) {
                         prebodaInput.checked = true;
+                    }
+                    const mainCourseInput = [...mainCourseInputs].find((input) => input.value === data.mainCourse);
+                    if (mainCourseInput) {
+                        mainCourseInput.checked = true;
                     }
                     const companionInput = [...companionInputs].find((input) => input.value === data.hasCompanion);
                     if (companionInput) {
@@ -530,8 +695,30 @@
                         if (companionPrebodaInput) {
                             companionPrebodaInput.checked = true;
                         }
-                        document.getElementById('companionMenu').value = data.companionMenu || 'Sin preferencias especiales';
-                        document.getElementById('companionAllergies').value = data.companionAllergies || '';
+                        const companionMainCourseInput = [...companionMainCourseInputs].find((input) => input.value === data.companionMainCourse);
+                        if (companionMainCourseInput) {
+                            companionMainCourseInput.checked = true;
+                        }
+                        const previousCompanionMenu = data.companionMenu || 'Sin preferencias especiales';
+                        document.getElementById('companionMenu').value = validMenus.includes(previousCompanionMenu)
+                            ? previousCompanionMenu
+                            : 'Sin preferencias especiales';
+                        const legacyCompanionOptions = ['Sin gluten', 'Sin lactosa'].includes(previousCompanionMenu)
+                            ? [previousCompanionMenu]
+                            : [];
+                        const savedCompanionOptions = Array.isArray(data.companionAllergyOptions)
+                            ? data.companionAllergyOptions
+                            : legacyCompanionOptions;
+                        companionAllergyOptionInputs.forEach((input) => {
+                            input.checked = savedCompanionOptions.includes(input.value);
+                        });
+                        const legacyCompanionDetails = !validMenus.includes(previousCompanionMenu)
+                            && !legacyCompanionOptions.length
+                            && previousCompanionMenu !== 'Otro'
+                            ? previousCompanionMenu
+                            : '';
+                        document.getElementById('companionAllergies').value = data.companionAllergiesDetails
+                            || [legacyCompanionDetails, data.companionAllergies].filter(Boolean).join('. ');
                     }
                 } catch (error) {
                     console.log('No se pudo recuperar el borrador RSVP', error);
