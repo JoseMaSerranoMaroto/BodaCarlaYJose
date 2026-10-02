@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/entrada.svg">
     <!-- Open Graph -->
     <meta property="og:title" content="Boda de Carla y José">
-    <meta property="og:description" content="Festival de amor indie: preboda el 19 y boda el 20 de febrero de 2027 en el Rancho de la Aldehuela, Torrecaballeros (Segovia).">
+    <meta property="og:description" content="Festival de boda indie: preboda el 19 y boda el 20 de febrero de 2027 en el Rancho de la Aldehuela, Torrecaballeros (Segovia).">
     <meta property="og:image" content="https://josemaserranomaroto.github.io/BodaCarlaYJose/assets/images/entrada.png">
     <meta property="og:url" content="https://josemaserranomaroto.github.io/BodaCarlaYJose/">
     <meta property="og:type" content="website">
@@ -77,7 +77,7 @@
             <div class="vinyl-wrapper mb-4 mx-auto">
                 <img src="assets/images/vinilo.png" alt="Carla y José" class="vinyl-img">
             </div>
-            <p class="hero-subtitle">Festival de amor indie</p>
+            <p class="hero-subtitle">Festival de boda indie</p>
             <p class="lead">Únete a nuestra celebración: preboda el 19 y boda el 20 de febrero de 2027</p>
             <a href="#confirmar-asistencia" class="hero-cta-button mb-4">
                 <i class="fas fa-list-check"></i>
@@ -111,7 +111,7 @@
                 <div id="confirmar-asistencia" class="rsvp-card rsvp-card-confirmation">
                     <div class="rsvp-kicker">Lista de invitados</div>
                     <h2 class="rsvp-title">Confirma tu asistencia</h2>
-                    <p class="rsvp-copy">Rellena el formulario para confirmar si vienes, indicar acompañantes y dejarnos los datos importantes para organizar la boda.</p>
+                    <p class="rsvp-copy">Rellena el formulario para confirmar si vienes. Indica quién te acompaña y déjanos los datos importantes para organizar la boda.</p>
                     <p class="rsvp-deadline"><i class="fas fa-hourglass-half me-2"></i>Fecha límite para confirmar: <strong>31 de diciembre de 2026</strong></p>
                     <div class="rsvp-actions">
                         <a class="rsvp-action-button rsvp-action-primary" href="rsvp.html">
@@ -174,7 +174,7 @@
                             </div>
                             <div class="event-item">
                                 <i class="fas fa-glass-cheers"></i>
-                                <span>Bebidas y charlas hasta el amanecer</span>
+                                <span>Bebidas y charlas</span>
                             </div>
                         </div>
                         <div class="dress-code-note">
@@ -217,7 +217,7 @@
                             <i class="fas fa-shirt"></i>
                             <div>
                                 <span class="dress-code-label">Código de vestimenta</span>
-                                <span class="dress-code-text">Elegancia invernal: apuesta por looks elegantes, tejidos de invierno y colores profundos. Evitad el blanco, reservado para la novia.</span>
+                                <span class="dress-code-text">Elegancia invernal: venid elegantes y abrigados. El blanco queda reservado para la novia.</span>
                             </div>
                         </div>
                         <div class="dress-code-note">
@@ -231,7 +231,7 @@
                             <i class="fas fa-cloud-sun-rain"></i>
                             <div>
                                 <span class="dress-code-label">Plan según el tiempo</span>
-                                <span class="dress-code-text">La ceremonia será al aire libre si el tiempo lo permite. Si el clima no acompaña, habrá un plan B en interior. La boda y la fiesta serán siempre en interior.</span>
+                                <span class="dress-code-text">La ceremonia será al aire libre si el tiempo lo permite; si no, habrá un plan B en interior. El banquete y la fiesta serán siempre en interior.</span>
                             </div>
                         </div>
                     </div>
@@ -247,7 +247,7 @@
                         <div class="location-badge">Zona del festival</div>
                         <h5>Rancho de la Aldehuela</h5>
                         <p class="location-place">Torrecaballeros, Segovia, España</p>
-                        <p>Un entorno natural, abierto y con carácter para celebrar la preboda y la gran noche con estética de festival indie.</p>
+                        <p>Un entorno acogedor y cuidado para celebrar juntos la preboda y la boda.</p>
                         <div class="location-actions">
                             <a class="rsvp-action-button rsvp-action-primary" href="https://www.google.com/maps/search/?api=1&query=Rancho+de+la+Aldehuela+Torrecaballeros+Segovia" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-route"></i>
@@ -355,7 +355,7 @@
                     <span>Pasamos la gorra</span>
                 </button>
                 <div class="collapse mt-3" id="gift-account">
-                    <p class="gift-account-number">IBAN: <strong>Pendiente de añadir</strong></p>
+                    <p class="gift-account-number">En breve añadiremos aquí los datos de la cuenta para quien quiera colaborar con nuestra luna de miel.</p>
                 </div>
             </div>
         </div>
@@ -447,11 +447,6 @@
                 <div class="footer-meta">
                     <p class="footer-brand">Carla & José</p>
                     <p id="footer-message" class="footer-message">Preparando el festival...</p>
-                    <div class="footer-bottom">
-                        <span id="footer-year"></span>
-                        <span class="footer-dot">·</span>
-                        <span>Rancho de la Aldehuela</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -544,13 +539,8 @@
                 });
             }
 
-            const footerYear = document.getElementById('footer-year');
             const footerMessage = document.getElementById('footer-message');
             const now = new Date();
-            const currentYear = now.getFullYear();
-            if (footerYear) {
-                footerYear.textContent = currentYear;
-            }
             if (footerMessage) {
                 const hour = now.getHours();
                 let message = 'Estamos preparando el mejor festival indie para ti.';

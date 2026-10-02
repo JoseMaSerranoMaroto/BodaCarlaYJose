@@ -279,11 +279,6 @@
                 <div class="footer-meta">
                     <p class="footer-brand">Carla & José</p>
                     <p id="footer-message" class="footer-message">Preparando el festival...</p>
-                    <div class="footer-bottom">
-                        <span id="footer-year"></span>
-                        <span class="footer-dot">·</span>
-                        <span>Rancho de la Aldehuela</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -293,12 +288,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbycvGft4CJ5fWfR3pmtg8W5Q4AWck8fwi9aQsYoKtBEOK80-gjoZwMZlRN2gSV1t664/exec';
-            const footerYear = document.getElementById('footer-year');
             const footerMessage = document.getElementById('footer-message');
             const now = new Date();
-            if (footerYear) {
-                footerYear.textContent = now.getFullYear();
-            }
             if (footerMessage) {
                 const hour = now.getHours();
                 footerMessage.textContent = hour < 12
